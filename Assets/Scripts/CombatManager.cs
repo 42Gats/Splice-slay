@@ -1,0 +1,260 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CombatManager : MonoBehaviour
+{
+    public Fighter player;
+    public Fighter enemy;
+
+    public enum CombatState { PlayerTurn, EnemyTurn, Busy }
+    public CombatState state = CombatState.PlayerTurn;
+
+    public DiceRoller diceRoller;
+
+    void Start()
+    {
+        state = CombatState.PlayerTurn;
+    }
+
+    [ContextMenu("TEST PlayerTurn")]
+    public void PlayerTurnAction()
+    {
+        if (state != CombatState.PlayerTurn) return;
+        StartCoroutine(PlayerTurnRoutine());
+    }
+
+    IEnumerator PlayerTurnRoutine()
+    {
+        state = CombatState.Busy;
+
+        var results = diceRoller.RollDice();
+
+        Debug.Log("Roll results:");
+        foreach (var r in results)
+            Debug.Log($" - {r.type}");
+
+        ApplyDiceResults(results);
+
+        yield return new WaitForSeconds(0.7f);
+
+        if (enemy.currentHP <= 0)
+        {
+            EndCombat(true);
+            yield break;
+        }
+
+        state = CombatState.EnemyTurn;
+        StartCoroutine(EnemyAttackRoutine());
+    }
+
+    IEnumerator EnemyAttackRoutine()
+    {
+        yield return new WaitForSeconds(0.6f);
+
+        enemy.Attack(player);
+
+        if (player.currentHP <= 0)
+        {
+            EndCombat(false);
+            yield break;
+        }
+
+        state = CombatState.PlayerTurn;
+    }
+
+    void EndCombat(bool playerWon)
+    {
+        Debug.Log("Combat terminé. Player won: " + playerWon);
+    }
+
+    void ApplyDiceResults(DiceFace[] results)
+    {
+        Dictionary<DiceFaceType, int> counts = new Dictionary<DiceFaceType, int>();
+        Dictionary<DiceFaceType, DiceFace> exampleFace = new Dictionary<DiceFaceType, DiceFace>();
+
+        foreach (var f in results)
+        {
+            if (f == null) continue;
+            if (!counts.ContainsKey(f.type)) { counts[f.type] = 0; exampleFace[f.type] = f; }
+            counts[f.type] += 1;
+        }
+
+        Debug.Log("Applying faces:");
+        foreach (var kv in counts)
+        {
+            DiceFaceType type = kv.Key;
+            int tier = kv.Value;
+            DiceFace face = exampleFace[type];
+
+            Debug.Log($" - Action: {type}, Tier: {tier}");
+
+            ApplyFaceEffect(face, tier);
+        }
+    }
+
+    void ApplyFaceEffect(DiceFace face, int tier)
+    {
+        switch (face.type)
+        {
+            case DiceFaceType.Attack:
+                ApplyAttack(tier);
+                break;
+
+            case DiceFaceType.HeavyAttack:
+                ApplyHeavyAttack(tier);
+                break;
+
+            case DiceFaceType.Shield:
+                ApplyShield(tier);
+                break;
+
+            case DiceFaceType.ShieldBash:
+                ApplyShieldBash(tier);
+                break;
+
+            case DiceFaceType.Bleed:
+                ApplyBleed(tier);
+                break;
+
+            case DiceFaceType.QuickStrike:
+                ApplyQuickStrike(tier);
+                break;
+
+            case DiceFaceType.ShadowStep:
+                ApplyShadowStep(tier);
+                break;
+
+            case DiceFaceType.Heal:
+                ApplyHeal(tier);
+                break;
+
+            case DiceFaceType.Overgrowth:
+                ApplyOvergrowth(tier);
+                break;
+
+            case DiceFaceType.LifeDrain:
+                ApplyLifeDrain(tier);
+                break;
+
+            case DiceFaceType.BloodSacrifice:
+                ApplyBloodSacrifice(tier);
+                break;
+
+            default:
+                Debug.LogWarning("Face non gérée: " + face.type);
+                break;
+        }
+    }
+
+    void ApplyAttack(int tier)
+    {
+        Debug.Log($"Applying ATTACK tier {tier}");
+        float[] mul = { 1f, 1f, 1.5f, 3f };
+        int dmg = Mathf.RoundToInt(player.attackDamage * mul[Mathf.Clamp(tier, 1, 3)]);
+        player.Attack(enemy, dmg);
+    }
+
+    void ApplyHeavyAttack(int tier)
+    {
+        Debug.Log($"Applying HEAVY ATTACK tier {tier}");
+        float[] mul = { 1f, 1.5f, 3f, 5f };
+        int dmg = Mathf.RoundToInt(player.attackDamage * mul[Mathf.Clamp(tier, 1, 3)]);
+        player.Attack(enemy, dmg);
+    }
+
+    void ApplyShield(int tier)
+    {
+        Debug.Log($"Applying SHIELD tier {tier}");
+        float[] pct = { 0f, 0.10f, 0.50f, 1.00f };
+        int shieldAmount = Mathf.RoundToInt(player.maxHP * pct[Mathf.Clamp(tier, 1, 3)]);
+        player.AddShield(shieldAmount);
+        Debug.Log($"Shield gained: {shieldAmount}");
+    }
+
+    void ApplyShieldBash(int tier)
+    {
+        Debug.Log($"Applying SHIELD BASH tier {tier}");
+        float[] reducePct = { 0f, 0.05f, 0.25f, 0.50f };
+        float[] dmgMul = { 1f, 0.5f, 0.75f, 1.5f };
+
+        int tempShield = Mathf.RoundToInt(player.maxHP * reducePct[Mathf.Clamp(tier, 1, 3)]);
+        player.AddShield(tempShield);
+
+        int dmg = Mathf.RoundToInt(player.attackDamage * dmgMul[Mathf.Clamp(tier, 1, 3)]);
+        player.Attack(enemy, dmg);
+    }
+
+    void ApplyBleed(int tier)
+    {
+        Debug.Log($"Applying BLEED tier {tier}");
+        float[] dmgMul = { 1f, 0.8f, 1.2f, 2.0f };
+        float[] bleedPct = { 0f, 0.03f, 0.05f, 0.08f };
+        int dmg = Mathf.RoundToInt(player.attackDamage * dmgMul[Mathf.Clamp(tier, 1, 3)]);
+        player.Attack(enemy, dmg);
+
+        enemy.ApplyBleed(bleedPct[Mathf.Clamp(tier, 1, 3)], 3, 1f);
+    }
+
+    void ApplyQuickStrike(int tier)
+    {
+        Debug.Log($"Applying QUICK STRIKE tier {tier}");
+        float[] dmgMul = { 1f, 0.7f, 1.2f, 1.8f };
+        int dmg = Mathf.RoundToInt(player.attackDamage * dmgMul[Mathf.Clamp(tier, 1, 3)]);
+        player.Attack(enemy, dmg);
+
+        DiceFace[] extra = diceRoller.RollDice();
+        Debug.Log("QuickStrike triggered an extra roll:");
+        foreach (var r in extra) Debug.Log($" - {r.type}");
+        ApplyDiceResults(extra);
+    }
+
+    void ApplyShadowStep(int tier)
+    {
+        Debug.Log($"Applying SHADOW STEP tier {tier}");
+    }
+
+    void ApplyHeal(int tier)
+    {
+        Debug.Log($"Applying HEAL tier {tier}");
+        float[] pct = { 0f, 0.10f, 0.20f, 0.35f };
+        player.HealPercent(pct[Mathf.Clamp(tier, 1, 3)]);
+    }
+
+    void ApplyOvergrowth(int tier)
+    {
+        Debug.Log($"Applying OVERGROWTH tier {tier}");
+        float[] pct = { 0f, 0.10f, 0.25f, 0.50f };
+        int shieldAmount = Mathf.RoundToInt(player.maxHP * pct[Mathf.Clamp(tier, 1, 3)]);
+        player.AddShield(shieldAmount);
+    }
+
+    void ApplyLifeDrain(int tier)
+    {
+        Debug.Log($"Applying LIFE DRAIN tier {tier}");
+        float[] dmgMul = { 1f, 0.90f, 1.50f, 2.50f };
+        float[] healPct = { 0f, 0.30f, 0.50f, 1.00f };
+        int dmg = Mathf.RoundToInt(player.attackDamage * dmgMul[Mathf.Clamp(tier, 1, 3)]);
+
+        int enemyHPBefore = enemy.currentHP;
+        enemy.TakeDamage(dmg);
+        int actualDealt = enemyHPBefore - enemy.currentHP;
+
+        int healAmount = Mathf.RoundToInt(actualDealt * healPct[Mathf.Clamp(tier, 1, 3)]);
+        player.HealFlat(healAmount);
+    }
+
+    void ApplyBloodSacrifice(int tier)
+    {
+        Debug.Log($"Applying BLOOD SACRIFICE tier {tier}");
+        float[] sacrificePct = { 0f, 0.05f, 0.10f, 0.15f };
+        float[] dmgMul = { 1f, 2.00f, 4.00f, 7.00f };
+
+        int lost = Mathf.RoundToInt(player.maxHP * sacrificePct[Mathf.Clamp(tier, 1, 3)]);
+        player.TakeDamage(lost);
+
+        int dmg = Mathf.RoundToInt(player.attackDamage * dmgMul[Mathf.Clamp(tier, 1, 3)]);
+        if (tier >= 3) dmg *= 2;
+        player.Attack(enemy, dmg);
+    }
+}

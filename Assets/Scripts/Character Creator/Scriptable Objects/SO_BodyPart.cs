@@ -12,6 +12,8 @@ public class SO_BodyPart : ScriptableObject
     // Body Part Details
     public string bodyPartName;
     public int bodyPartAnimationID;
+    public SO_Synergy[] synergies = new SO_Synergy[2];
+    public Stats stats;
 
     // List Containing All Body Part Animations
     public List<AnimationClip> allBodyPartAnimations = new List<AnimationClip>();

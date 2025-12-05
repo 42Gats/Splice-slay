@@ -14,6 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartName: Mohawk
   bodyPartAnimationID: 0
+  synergyTags: 0100000001000000
+  stats:
+    HP: 0
+    ATK: 0
+    SPD: 0
+    DEF: 0
+    CC: 0
+    CD: 0
   allBodyPartAnimations:
   - {fileID: 7400000, guid: de2c7eacb04ddc94589585a6701088c8, type: 2}
   - {fileID: 7400000, guid: 7ec2479e439c0a946acdd0ac1daeb17b, type: 2}

@@ -14,4 +14,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_Synergy
   tag: 2
   synergyName: Nature
-  tiers: []
+  tiers:
+  - requiredCount: 3
+    description: Restore 10% HP after each combat and boost every heal source by
+      50%. If you're an Elf, the first time you take lethal damage, heal for 15%
+      HP.
+    statBonus:
+      HP: 0
+      ATK: 0
+      SPD: 0
+      DEF: 0
+      CC: 0
+      CD: 0
+    hpMultiplier: 1.5
+    atkMultiplier: 0
+    defMultiplier: 0
+    spdMultiplier: 0
+    ccMultiplier: 0
+    cdMultiplier: 0
+  - requiredCount: 6
+    description: Restore 20% HP after each combat and boost every heal source by
+      100%. If you're an Elf, the first time you take lethal damage, heal for 15%
+      HP.
+    statBonus:
+      HP: 0
+      ATK: 0
+      SPD: 0
+      DEF: 0
+      CC: 0
+      CD: 0
+    hpMultiplier: 2
+    atkMultiplier: 0
+    defMultiplier: 0
+    spdMultiplier: 0
+    ccMultiplier: 0
+    cdMultiplier: 0

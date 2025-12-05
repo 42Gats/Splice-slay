@@ -14,4 +14,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_Synergy
   tag: 0
   synergyName: Golden
-  tiers: []
+  tiers:
+  - requiredCount: 1
+    description: "Increase CC by 10% and CD by 20%. If you're a Gobelin, every 5
+      \u201Cattack dice\u201D is guaranteed to be a critical hit."
+    statBonus:
+      HP: 0
+      ATK: 0
+      SPD: 0
+      DEF: 0
+      CC: 0
+      CD: 0
+    hpMultiplier: 0
+    atkMultiplier: 0
+    defMultiplier: 0
+    spdMultiplier: 0
+    ccMultiplier: 1.1
+    cdMultiplier: 1.2
+  - requiredCount: 3
+    description: "Increase CC by 25% and CD by 40%. If you're a Gobelin, every 5
+      \u201Cattack dice\u201D is guaranteed to be a critical hit."
+    statBonus:
+      HP: 0
+      ATK: 0
+      SPD: 0
+      DEF: 0
+      CC: 0
+      CD: 0
+    hpMultiplier: 0
+    atkMultiplier: 0
+    defMultiplier: 0
+    spdMultiplier: 0
+    ccMultiplier: 1.25
+    cdMultiplier: 1.4
+  - requiredCount: 5
+    description: "Increase CC by 40% and CD by 70%. If you're a Gobelin, every 5
+      \u201Cattack dice\u201D is guaranteed to be a critical hit."
+    statBonus:
+      HP: 0
+      ATK: 0
+      SPD: 0
+      DEF: 0
+      CC: 0
+      CD: 0
+    hpMultiplier: 0
+    atkMultiplier: 0
+    defMultiplier: 0
+    spdMultiplier: 0
+    ccMultiplier: 1.4
+    cdMultiplier: 1.7

@@ -12,6 +12,8 @@ public class CombatManager : MonoBehaviour
 
     public DiceRoller diceRoller;
 
+    private bool quickStrikeUsedThisTurn = false;
+
     void Start()
     {
         state = CombatState.PlayerTurn;

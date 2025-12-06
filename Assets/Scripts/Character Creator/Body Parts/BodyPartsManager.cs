@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BodyPartsManager : MonoBehaviour
 {
-    [SerializeField] private SO_CharacterBody characterBody;
+    [SerializeField] public SO_CharacterBody characterBody;
 
     [SerializeField] private string[] bodyPartTypes;
     [SerializeField] private string[] characterStates;

@@ -8,7 +8,6 @@ public class PlayerStats : MonoBehaviour
     public SO_Race currentRace;
     public SO_Class currentClass;
     
-    [Header("Character Body")]
     [SerializeField] private SO_CharacterBody characterBody;
 
     [Header("Base Stats")]
@@ -22,6 +21,8 @@ public class PlayerStats : MonoBehaviour
         CD = 150
     };
 
+    public float currentHP;
+
     [Header("Synergy Database")]
     [SerializeField] private List<SO_Synergy> allSynergies;
 
@@ -33,8 +34,11 @@ public class PlayerStats : MonoBehaviour
 
     private void Awake()
     {
+        currentHP = baseStats.HP;
         activeSynergies = new Dictionary<SynergyTag, int>();
         finalStats = baseStats;
+        characterBody = GetComponent<BodyPartsManager>()?.characterBody;
+        DontDestroyOnLoad(this.gameObject);
     }
 
     private void Start()
@@ -48,8 +52,7 @@ public class PlayerStats : MonoBehaviour
         
         currentRace = race;
         CalculateStats();
-        
-        Debug.Log($"Race changed to: {race.raceName}");
+        currentHP = finalStats.HP;
     }
 
     public void SetClass(SO_Class playerClass)
@@ -57,8 +60,6 @@ public class PlayerStats : MonoBehaviour
         if (playerClass == null) return;
         
         currentClass = playerClass;
-        
-        Debug.Log($"Class changed to: {playerClass.className}");
     }
 
     public void OnEquipmentChanged()
@@ -209,6 +210,47 @@ public class PlayerStats : MonoBehaviour
     public float GetSPD() => finalStats.SPD;
     public float GetCC() => finalStats.CC;
     public float GetCD() => finalStats.CD;
+    public float GetCurrentHP() => currentHP;
+
+    public void SetMaxHP(float newMaxHP)
+    {
+        finalStats.HP = newMaxHP;
+        if (currentHP > newMaxHP)
+        {
+            currentHP = newMaxHP;
+        }
+    }
+
+    public void SetATK(float newATK)
+    {
+        finalStats.ATK = newATK;
+    }
+
+    public void SetDEF(float newDEF)
+    {
+        finalStats.DEF = newDEF;
+    }
+
+    public void SetSPD(float newSPD)
+    {
+        finalStats.SPD = newSPD;
+    }
+
+    public void SetCC(float newCC)
+    {
+        finalStats.CC = newCC;
+    }
+
+    public void SetCD(float newCD)
+    {
+        finalStats.CD = newCD;
+    }
+
+    public void SetCurrentHP(float newCurrentHP)
+    {
+        currentHP = Mathf.Clamp(newCurrentHP, 0, finalStats.HP);
+    }
+    
 
     public Dictionary<SynergyTag, int> GetActiveSynergies() => activeSynergies;
     public List<SO_Synergy.SynergyTier> GetActiveTiers() => activeTiers;

@@ -17,6 +17,9 @@ public class CombatManager : MonoBehaviour
     void Start()
     {
         state = CombatState.PlayerTurn;
+        player = GameObject.Find("Player").GetComponent<Fighter>();
+        GameObject.Find("PlayerHPBar").GetComponent<HealthBar>().target = player;
+        GameObject.Find("PlayerHPBar").GetComponent<HealthBar>().Reset();
     }
 
     [ContextMenu("TEST PlayerTurn")]
@@ -40,7 +43,7 @@ public class CombatManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.7f);
 
-        if (enemy.currentHP <= 0)
+        if (enemy.stats.GetCurrentHP() <= 0)
         {
             EndCombat(true);
             yield break;
@@ -56,7 +59,7 @@ public class CombatManager : MonoBehaviour
 
         enemy.Attack(player);
 
-        if (player.currentHP <= 0)
+        if (player.stats.GetCurrentHP() <= 0)
         {
             EndCombat(false);
             yield break;
@@ -67,7 +70,7 @@ public class CombatManager : MonoBehaviour
 
     void EndCombat(bool playerWon)
     {
-        Debug.Log("Combat terminé. Player won: " + playerWon);
+        Debug.Log("Combat terminï¿½. Player won: " + playerWon);
     }
 
     void ApplyDiceResults(DiceFace[] results)
@@ -144,7 +147,7 @@ public class CombatManager : MonoBehaviour
                 break;
 
             default:
-                Debug.LogWarning("Face non gérée: " + face.type);
+                Debug.LogWarning("Face non gï¿½rï¿½e: " + face.type);
                 break;
         }
     }
@@ -153,7 +156,7 @@ public class CombatManager : MonoBehaviour
     {
         Debug.Log($"Applying ATTACK tier {tier}");
         float[] mul = { 1f, 1f, 1.5f, 3f };
-        int dmg = Mathf.RoundToInt(player.attackDamage * mul[Mathf.Clamp(tier, 1, 3)]);
+        int dmg = Mathf.RoundToInt(player.stats.GetATK() * mul[Mathf.Clamp(tier, 1, 3)]);
         player.Attack(enemy, dmg);
     }
 
@@ -161,7 +164,7 @@ public class CombatManager : MonoBehaviour
     {
         Debug.Log($"Applying HEAVY ATTACK tier {tier}");
         float[] mul = { 1f, 1.5f, 3f, 5f };
-        int dmg = Mathf.RoundToInt(player.attackDamage * mul[Mathf.Clamp(tier, 1, 3)]);
+        int dmg = Mathf.RoundToInt(player.stats.GetATK() * mul[Mathf.Clamp(tier, 1, 3)]);
         player.Attack(enemy, dmg);
     }
 
@@ -181,7 +184,7 @@ public class CombatManager : MonoBehaviour
 
         player.AddDamageReduction(reduce[tier]);
 
-        int dmg = Mathf.RoundToInt(player.attackDamage * dmgMul[tier]);
+        int dmg = Mathf.RoundToInt(player.stats.GetATK() * dmgMul[tier]);
         player.Attack(enemy, dmg);
     }
 
@@ -190,7 +193,7 @@ public class CombatManager : MonoBehaviour
         Debug.Log($"Applying BLEED tier {tier}");
         float[] dmgMul = { 1f, 0.8f, 1.2f, 2.0f };
         float[] bleedPct = { 0f, 0.03f, 0.05f, 0.08f };
-        int dmg = Mathf.RoundToInt(player.attackDamage * dmgMul[Mathf.Clamp(tier, 1, 3)]);
+        int dmg = Mathf.RoundToInt(player.stats.GetATK() * dmgMul[Mathf.Clamp(tier, 1, 3)]);
         player.Attack(enemy, dmg);
 
         enemy.ApplyBleed(bleedPct[Mathf.Clamp(tier, 1, 3)], 3, 1f);
@@ -200,7 +203,7 @@ public class CombatManager : MonoBehaviour
     {
         Debug.Log($"Applying QUICK STRIKE tier {tier}");
         float[] dmgMul = { 1f, 0.7f, 1.2f, 1.8f };
-        int dmg = Mathf.RoundToInt(player.attackDamage * dmgMul[tier]);
+        int dmg = Mathf.RoundToInt(player.stats.GetATK() * dmgMul[tier]);
         player.Attack(enemy, dmg);
 
         if (!quickStrikeUsedThisTurn)
@@ -209,11 +212,11 @@ public class CombatManager : MonoBehaviour
             quickStrikeUsedThisTurn = true;
 
             DiceFace[] extra = diceRoller.RollDice();
-            ApplyDice(extra);
+            ApplyDiceResults(extra);
         }
         else
         {
-            Debug.Log("QuickStrike ignoré : déjà utilisé ce tour.");
+            Debug.Log("QuickStrike ignorÃ© : dÃ©jÃ  utilisÃ© ce tour.");
         }
     }
 
@@ -233,7 +236,7 @@ public class CombatManager : MonoBehaviour
     {
         Debug.Log($"Applying OVERGROWTH tier {tier}");
         float[] pct = { 0f, 0.10f, 0.25f, 0.50f };
-        int shieldAmount = Mathf.RoundToInt(player.maxHP * pct[Mathf.Clamp(tier, 1, 3)]);
+        int shieldAmount = Mathf.RoundToInt(player.stats.GetMaxHP() * pct[Mathf.Clamp(tier, 1, 3)]);
         player.AddShield(shieldAmount);
     }
 
@@ -242,12 +245,11 @@ public class CombatManager : MonoBehaviour
         Debug.Log($"Applying LIFE DRAIN tier {tier}");
         float[] dmgMul = { 1f, 0.90f, 1.50f, 2.50f };
         float[] healPct = { 0f, 0.30f, 0.50f, 1.00f };
-        int dmg = Mathf.RoundToInt(player.attackDamage * dmgMul[Mathf.Clamp(tier, 1, 3)]);
+        int dmg = Mathf.RoundToInt(player.stats.GetATK() * dmgMul[Mathf.Clamp(tier, 1, 3)]);
 
-        int enemyHPBefore = enemy.currentHP;
+        int enemyHPBefore = (int)enemy.stats.GetCurrentHP();
         enemy.TakeDamage(dmg);
-        int actualDealt = enemyHPBefore - enemy.currentHP;
-
+        int actualDealt = enemyHPBefore - (int)enemy.stats.GetCurrentHP();
         int healAmount = Mathf.RoundToInt(actualDealt * healPct[Mathf.Clamp(tier, 1, 3)]);
         player.HealFlat(healAmount);
     }
@@ -258,10 +260,10 @@ public class CombatManager : MonoBehaviour
         float[] sacrificePct = { 0f, 0.05f, 0.10f, 0.15f };
         float[] dmgMul = { 1f, 2.00f, 4.00f, 7.00f };
 
-        int lost = Mathf.RoundToInt(player.maxHP * sacrificePct[Mathf.Clamp(tier, 1, 3)]);
+        int lost = Mathf.RoundToInt(player.stats.GetMaxHP() * sacrificePct[Mathf.Clamp(tier, 1, 3)]);
         player.TakeDamage(lost);
 
-        int dmg = Mathf.RoundToInt(player.attackDamage * dmgMul[Mathf.Clamp(tier, 1, 3)]);
+        int dmg = Mathf.RoundToInt(player.stats.GetATK() * dmgMul[Mathf.Clamp(tier, 1, 3)]);
         if (tier >= 3) dmg *= 2;
         player.Attack(enemy, dmg);
     }

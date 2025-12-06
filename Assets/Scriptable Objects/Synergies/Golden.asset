@@ -57,9 +57,9 @@ MonoBehaviour:
       DEF: 0
       CC: 0
       CD: 0
-    hpMultiplier: 0
-    atkMultiplier: 0
-    defMultiplier: 0
-    spdMultiplier: 0
+    hpMultiplier: 1
+    atkMultiplier: 1
+    defMultiplier: 1
+    spdMultiplier: 1
     ccMultiplier: 1.4
     cdMultiplier: 1.7

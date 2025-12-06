@@ -10,6 +10,11 @@ public class PlayerTypeSelector : MonoBehaviour
     [SerializeField] private RaceSelection raceSelection;
     [SerializeField] private ClassSelection classSelection;
 
+    public void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     private void Start()
     {
         // Initialiser les index actuels basés sur ce qui est déjà set dans playerStats

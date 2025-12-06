@@ -6,6 +6,7 @@ public class DiceUI : MonoBehaviour
     [SerializeField] private CombatManager combatManager;
     [SerializeField] private Button rollButton;
     [SerializeField] private CanvasGroup rollGroup;
+    [SerializeField] private DiceRoller diceRoller;
 
     private void Start()
     {
@@ -44,6 +45,11 @@ public class DiceUI : MonoBehaviour
         }
 
         rollButton.interactable = isPlayerTurn;
+
+        if (isPlayerTurn && !diceRoller.IsDiceEnabled())
+        {
+            diceRoller.SetDiceEnabled(true);
+        }
 
         if (rollGroup != null)
         {

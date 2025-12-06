@@ -1,106 +1,147 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DiceRoller : MonoBehaviour
 {
-    [Header("The dice used for this battle")]
-    public Dice playerDice;
-
-    [Header("Dice Prefab")]
+    [Header("Dice Settings")]
+    [SerializeField] private Dice playerDice;
     [SerializeField] private GameObject dicePrefab;
     [SerializeField] private int diceCount = 3;
     [SerializeField] private Vector3 spacing = new Vector3(50, 0, 0);
 
-    private List<Animator> diceAnimators = new List<Animator>();
-    private ArrayList<GameObject> diceInstances = new ArrayList<GameObject>();
+    [Header("UI References")]
+    [SerializeField] private Image[] diceImages = new Image[3];
+    [SerializeField] private GameObject diceResult;
 
-    void Start()
+    private List<Animator> diceAnimators = new List<Animator>();
+    private List<GameObject> diceInstances = new List<GameObject>();
+
+    private void Start()
     {
         InstantiateDice();
     }
 
-    void InstantiateDice()
+    private void InstantiateDice()
     {
-        // Clear any existing dice
-        diceAnimators.Clear();
-        foreach (Transform child in transform)
-        {
-            Destroy(child.gameObject);
-        }
+        ClearDice();
+        SetDiceResultVisibility(false);
 
-        diceInstances.Clear();
+        float distanceBetweenDice = spacing.magnitude;
+        float totalDistance = (diceCount - 1) * distanceBetweenDice;
+        float startPosition = -totalDistance / 2f;
 
-        // Calculate total width needed
-        float totalWidth = (diceCount - 1) * spacing.magnitude;
-        float startOffset = -totalWidth / 2f;
-
-        // Spawn new dice centered
         for (int i = 0; i < diceCount; i++)
         {
-            Vector3 position = transform.position + (spacing.normalized * (startOffset + i * spacing.magnitude));
-            GameObject dice = Instantiate(dicePrefab, position, Quaternion.identity, transform);
-
-            diceInstances.Add(dice);
+            float offset = startPosition + (i * distanceBetweenDice);
+            Vector3 position = transform.position + (spacing.normalized * offset);
             
+            GameObject dice = Instantiate(dicePrefab, position, Quaternion.identity, transform);
+            diceInstances.Add(dice);
+
             Animator animator = dice.GetComponent<Animator>();
             if (animator != null)
-            {
                 diceAnimators.Add(animator);
-            }
         }
     }
 
-    public DiceFace[] RollDice()
+    private void ClearDice()
     {
-        DiceFace[] result = new DiceFace[3];
-
-        for (int i = 0; i < diceInstances.Count; i++)
-        {
-            int index = Random.Range(0, 6);
-            result[i] = playerDice.faces[index];
-            // diceInstances[i].GetComponent<Animator>().SetTrigger(result[i].type.ToString());
-            // Debug.Log($"Dice {i} rolled {result[i].type}");
-        }
-
-        return result;
+        diceAnimators.Clear();
+        foreach (Transform child in transform)
+            Destroy(child.gameObject);
+        diceInstances.Clear();
     }
 
-    // Plays the roll animation on all dice, waits for them to finish, then returns the rolled faces via callback.
+    public void SetDiceResultVisibility(bool showResults)
+    {
+        if (diceResult != null)
+            diceResult.SetActive(showResults);
+
+        foreach (GameObject dice in diceInstances)
+        {
+            if (dice != null)
+                dice.SetActive(!showResults);
+        }
+    }
+
+    public void SetDiceEnabled(bool enabled)
+    {
+        if (diceResult != null)
+            if (enabled == false)
+                diceResult.SetActive(enabled);
+    
+        foreach (GameObject dice in diceInstances)
+        {
+            if (dice != null)
+                dice.SetActive(enabled);
+        }
+    }
+
+    public bool IsDiceEnabled()
+    {
+        if (diceInstances.Count == 0) return false;
+        return diceInstances[0].activeSelf;
+    }
+
+    private DiceFace[] RollDice()
+    {
+        DiceFace[] results = new DiceFace[diceCount];
+        SetDiceResultVisibility(true);
+
+        for (int i = 0; i < diceCount; i++)
+        {
+            int randomIndex = Random.Range(0, playerDice.faces.Length);
+            results[i] = playerDice.faces[randomIndex];
+            
+            if (i < diceImages.Length && diceImages[i] != null)
+                diceImages[i].sprite = results[i].icon;
+        }
+
+        return results;
+    }
+
     public IEnumerator RollDiceWithAnimation(System.Action<DiceFace[]> onComplete)
     {
-        // Trigger all dice animations
-        foreach (var animator in diceAnimators)
+        TriggerAllAnimations();
+        yield return null;
+
+        yield return StartCoroutine(WaitForAllAnimationsComplete());
+
+        DiceFace[] results = RollDice();
+        onComplete?.Invoke(results);
+    }
+
+    private void TriggerAllAnimations()
+    {
+        foreach (Animator animator in diceAnimators)
         {
             if (animator != null)
-            {
                 animator.SetTrigger("Rolling");
-            }
         }
-        
-        // Wait one frame for animators to process
-        yield return null;
-        
-        // Wait for all animations to complete
-        bool allDoneAnimating = false;
-        while (!allDoneAnimating)
+    }
+
+    private IEnumerator WaitForAllAnimationsComplete()
+    {
+        bool allDone = false;
+        while (!allDone)
         {
-            allDoneAnimating = true;
-            foreach (var animator in diceAnimators)
+            allDone = true;
+            foreach (Animator animator in diceAnimators)
             {
-                if (animator != null)
+                if (animator == null) continue;
+
+                AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+                bool isAnimating = stateInfo.normalizedTime < 1.0f || animator.IsInTransition(0);
+                
+                if (isAnimating)
                 {
-                    AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-                    if (stateInfo.normalizedTime < 1.0f || animator.IsInTransition(0))
-                    {
-                        allDoneAnimating = false;
-                        break;
-                    }
+                    allDone = false;
+                    break;
                 }
             }
             yield return null;
         }
-
-        onComplete?.Invoke(RollDice());
     }
 }

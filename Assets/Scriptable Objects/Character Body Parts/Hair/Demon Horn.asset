@@ -10,10 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d56554f0f28e3174b9b0f26242568028, type: 3}
-  m_Name: Hair 1
+  m_Name: Demon Horn
   m_EditorClassIdentifier: 
   bodyPartName: Casual Swoop
   bodyPartAnimationID: 1
+  synergyTags: 0300000004000000
+  stats:
+    HP: -10
+    ATK: 15
+    SPD: 0
+    DEF: 2
+    CC: 0
+    CD: 0
   allBodyPartAnimations:
   - {fileID: 7400000, guid: 0c2ccb54fd2f0554b843168383d3ee27, type: 2}
   - {fileID: 7400000, guid: 2aac1a43ef5dc2243bcd2769a133a191, type: 2}

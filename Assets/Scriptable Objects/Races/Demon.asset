@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_Race
   race: 3
   raceName: Demon
-  associatedTag: 4
+  synergyTag: 4
   description: "J'ai plus d'inspi mais c'est un m\xE9chant."

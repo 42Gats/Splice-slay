@@ -12,8 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d56554f0f28e3174b9b0f26242568028, type: 3}
   m_Name: Claws
   m_EditorClassIdentifier: 
-  bodyPartName: Green Shirt
+  bodyPartName: Claws
   bodyPartAnimationID: 1
+  synergyTags: 0200000003000000
+  stats:
+    HP: 0
+    ATK: 0
+    SPD: 0
+    DEF: 0
+    CC: 0
+    CD: 0
   allBodyPartAnimations:
   - {fileID: 7400000, guid: 6d3a7adfcdc562347aebefc1ff5ecc7b, type: 2}
   - {fileID: 7400000, guid: 01935b24bcbdc354cb283cacf2e175ac, type: 2}

@@ -1,13 +1,7 @@
-// Code written by tutmo (youtube.com/tutmo)
-// For help, check out the tutorial - https://youtu.be/PNWK5o9l54w
-
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // ~~ 1. Controls All Player Movement
-    // ~~ 2. Updates Animator to Play Idle & Walking Animations
-
     private float speed = 4f;
     private Rigidbody2D myRigidbody;
     private Vector3 playerMovement;

@@ -25,17 +25,16 @@ public class PlayerStats : MonoBehaviour
     [Header("Synergy Database")]
     [SerializeField] private List<SO_Synergy> allSynergies;
 
-    // Stats calculées
     private Stats finalStats;
     private Dictionary<SynergyTag, int> activeSynergies = new Dictionary<SynergyTag, int>();
     private List<SO_Synergy.SynergyTier> activeTiers = new List<SO_Synergy.SynergyTier>();
 
-    // Event pour notifier les changements
     public System.Action OnStatsChanged;
 
     private void Awake()
     {
         activeSynergies = new Dictionary<SynergyTag, int>();
+        finalStats = baseStats;
     }
 
     private void Start()
@@ -58,7 +57,6 @@ public class PlayerStats : MonoBehaviour
         if (playerClass == null) return;
         
         currentClass = playerClass;
-        // Tu peux ajouter de la logique ici pour changer le dé de départ
         
         Debug.Log($"Class changed to: {playerClass.className}");
     }

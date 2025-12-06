@@ -93,10 +93,7 @@ public class PlayerTypeSelector : MonoBehaviour
     {
         SO_Race selectedRace = raceSelection.raceOptions[raceSelection.raceCurrentIndex];
         
-        // Mettre à jour le PlayerStats (ceci recalcule automatiquement les synergies)
-        playerStats.SetRace(selectedRace);
-        
-        // Mettre à jour l'affichage
+        playerStats.SetRace(selectedRace);        
         UpdateRaceDisplay();
     }
 
@@ -108,8 +105,6 @@ public class PlayerTypeSelector : MonoBehaviour
         raceSelection.raceNameTextComponent.text = selectedRace.raceName;
     }
 
-    // ============== CLASS NAVIGATION ==============
-    
     public void NextClass()
     {
         if (classSelection.classOptions.Length == 0) return;
@@ -140,10 +135,7 @@ public class PlayerTypeSelector : MonoBehaviour
     {
         SO_Class selectedClass = classSelection.classOptions[classSelection.classCurrentIndex];
         
-        // Mettre à jour le PlayerStats
         playerStats.SetClass(selectedClass);
-        
-        // Mettre à jour l'affichage
         UpdateClassDisplay();
     }
 
@@ -155,8 +147,6 @@ public class PlayerTypeSelector : MonoBehaviour
         classSelection.classNameTextComponent.text = selectedClass.className;
     }
 }
-
-// ============== SERIALIZABLE CLASSES ==============
 
 [System.Serializable]
 public class RaceSelection

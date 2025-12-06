@@ -29,7 +29,8 @@ public class DiceRoller : MonoBehaviour
     {
         if (diceAnimator != null && !string.IsNullOrEmpty(rollTrigger))
         {
-            diceAnimator.SetTrigger(rollTrigger);
+            Debug.LogError("Starting dice roll animation.");
+            diceAnimator.SetTrigger("Rolling");
             
             // Wait one frame for the animator to process the trigger
             yield return null;

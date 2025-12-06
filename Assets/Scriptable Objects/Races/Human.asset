@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_Race
   race: 0
   raceName: Human
-  associatedTag: 6
+  synergyTag: 6
   description: I'm only human after all.

@@ -30,7 +30,8 @@ public class CombatManager : MonoBehaviour
     {
         state = CombatState.Busy;
 
-        var results = diceRoller.RollDice();
+        DiceFace[] results = null;
+        yield return StartCoroutine(diceRoller.RollDiceWithAnimation(r => results = r));
 
         Debug.Log("Roll results:");
         foreach (var r in results)
@@ -52,7 +53,9 @@ public class CombatManager : MonoBehaviour
 
     IEnumerator EnemyAttackRoutine()
     {
-        yield return new WaitForSeconds(0.6f);
+        // Timer to simulate enemy thinking/animation
+        float enemyAnimationTime = 1.5f;
+        yield return new WaitForSeconds(enemyAnimationTime);
 
         enemy.Attack(player);
 
@@ -61,13 +64,16 @@ public class CombatManager : MonoBehaviour
             EndCombat(false);
             yield break;
         }
+        
+        // Brief pause before returning to player turn
+        yield return new WaitForSeconds(0.5f);
 
         state = CombatState.PlayerTurn;
     }
 
     void EndCombat(bool playerWon)
     {
-        Debug.Log("Combat terminé. Player won: " + playerWon);
+        Debug.Log("Combat terminï¿½. Player won: " + playerWon);
     }
 
     void ApplyDiceResults(DiceFace[] results)
@@ -144,7 +150,7 @@ public class CombatManager : MonoBehaviour
                 break;
 
             default:
-                Debug.LogWarning("Face non gérée: " + face.type);
+                Debug.LogWarning("Face non gï¿½rï¿½e: " + face.type);
                 break;
         }
     }
@@ -209,11 +215,11 @@ public class CombatManager : MonoBehaviour
             quickStrikeUsedThisTurn = true;
 
             DiceFace[] extra = diceRoller.RollDice();
-            ApplyDice(extra);
+            ApplyDiceResults(extra);
         }
         else
         {
-            Debug.Log("QuickStrike ignoré : déjà utilisé ce tour.");
+            Debug.Log("QuickStrike ignorï¿½ : dï¿½jï¿½ utilisï¿½ ce tour.");
         }
     }
 

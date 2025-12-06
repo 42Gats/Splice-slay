@@ -10,10 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d56554f0f28e3174b9b0f26242568028, type: 3}
-  m_Name: Legs 0
+  m_Name: Golden Greaves
   m_EditorClassIdentifier: 
-  bodyPartName: Gray Pants
-  bodyPartAnimationID: 0
+  bodyPartName: Golden Greaves
+  bodyPartAnimationID: 1
+  synergyTags: 0600000000000000
+  stats:
+    HP: 0
+    ATK: 5
+    SPD: 15
+    DEF: 0
+    CC: 0
+    CD: 0
   allBodyPartAnimations:
   - {fileID: 7400000, guid: 2101e21bcb897974e86d7e48886abd9a, type: 2}
   - {fileID: 7400000, guid: 126ec44803c7c3748ab8578abed12a45, type: 2}

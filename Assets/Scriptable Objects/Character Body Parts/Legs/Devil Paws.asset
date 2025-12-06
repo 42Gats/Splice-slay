@@ -10,10 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d56554f0f28e3174b9b0f26242568028, type: 3}
-  m_Name: Legs 1
+  m_Name: Devil Paws
   m_EditorClassIdentifier: 
-  bodyPartName: Blue Jeans
-  bodyPartAnimationID: 1
+  bodyPartName: Devil Paws
+  bodyPartAnimationID: 0
+  synergyTags: 0400000002000000
+  stats:
+    HP: 0
+    ATK: 10
+    SPD: -5
+    DEF: 0
+    CC: 10
+    CD: 0
   allBodyPartAnimations:
   - {fileID: 7400000, guid: e1d9d9659405c4b49a6573decb8fcfbb, type: 2}
   - {fileID: 7400000, guid: 0b671657d0236e846b6b0ca473079f17, type: 2}

@@ -693,7 +693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7190c99885feed842ad9b302f83c059d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthBar
-  target: {fileID: 953314579}
+  target: {fileID: 0}
   slider: {fileID: 748756254}
 --- !u!114 &748756254
 MonoBehaviour:
@@ -947,11 +947,6 @@ MonoBehaviour:
   maxHP: 100
   currentHP: 100
   attackDamage: 10
-  defense: 0
-  critChance: 0.1
-  critDamageMultiplier: 2
-  damageReductionBuff: 0
-  maxDamageReduction: 0.8
   animator: {fileID: 953314580}
   shield: 0
 --- !u!95 &953314580 stripped
@@ -1525,7 +1520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7190c99885feed842ad9b302f83c059d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthBar
-  target: {fileID: 1760644286}
+  target: {fileID: 1760644288}
   slider: {fileID: 1218445980}
 --- !u!114 &1218445980
 MonoBehaviour:
@@ -1607,8 +1602,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daddfc773dc436e47ba01a4227f43658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CombatManager
-  player: {fileID: 953314579}
-  enemy: {fileID: 1760644286}
+  player: {fileID: 0}
+  enemy: {fileID: 1760644288}
   state: 0
   diceRoller: {fileID: 591304565}
 --- !u!4 &1218755580
@@ -1847,32 +1842,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1750060709}
   m_CullTransparentMesh: 1
---- !u!1 &1760644285 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2800922769274151393, guid: fc5a546383502a1478e488df4dcd05cf, type: 3}
+--- !u!114 &1760644288 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 422972762942509534, guid: fc5a546383502a1478e488df4dcd05cf, type: 3}
   m_PrefabInstance: {fileID: 4645597822764674273}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1760644286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760644285}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12fcfc48a6f8c9c43a83e7729f27fb73, type: 3}
+  m_Script: {fileID: 11500000, guid: 5489da221204dd34ea1550028ca1d5ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fighter
   fighterName: Fighter
   maxHP: 100
   currentHP: 100
   attackDamage: 10
-  defense: 0
-  critChance: 0.1
-  critDamageMultiplier: 2
-  damageReductionBuff: 0
-  maxDamageReduction: 0.8
   animator: {fileID: 1760644287}
   shield: 0
 --- !u!95 &1760644287 stripped
@@ -1995,10 +1979,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2800922769274151393, guid: fc5a546383502a1478e488df4dcd05cf, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1760644286}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc5a546383502a1478e488df4dcd05cf, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -2006,7 +1987,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 52923691}
   - {fileID: 1098580797}
-  - {fileID: 1148119441285299189}
   - {fileID: 4645597822764674273}
   - {fileID: 852083034}
   - {fileID: 674654127}

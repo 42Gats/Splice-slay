@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fae320b5e3afaa342ac6aefceabf61b9, type: 3}
+  m_Name: Shaman_Starter
+  m_EditorClassIdentifier: Assembly-CSharp::Dice
+  faces:
+  - {fileID: 11400000, guid: cf0a14ad64dc68c4fa3cc6d4bd97470a, type: 2}
+  - {fileID: 11400000, guid: cf0a14ad64dc68c4fa3cc6d4bd97470a, type: 2}
+  - {fileID: 11400000, guid: bbaa047f6ae835f4e8faff067f05409c, type: 2}
+  - {fileID: 11400000, guid: ddcd2f0cb14670246936fc0d5cbd9ba2, type: 2}
+  - {fileID: 11400000, guid: 0fb120a0041738f4984691354a53a94c, type: 2}
+  - {fileID: 11400000, guid: 0fb120a0041738f4984691354a53a94c, type: 2}

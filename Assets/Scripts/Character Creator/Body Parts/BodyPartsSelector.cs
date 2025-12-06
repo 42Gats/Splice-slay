@@ -1,16 +1,9 @@
-// Code written by tutmo (youtube.com/tutmo)
-// For help, check out the tutorial - https://youtu.be/PNWK5o9l54w
-
 using UnityEngine;
 using UnityEngine.UI;
 
 public class BodyPartsSelector : MonoBehaviour
 {
-    // ~~ 1. Handles Body Part Selection Updates
-
-    // Full Character Body
     [SerializeField] private SO_CharacterBody characterBody;
-    // Body Part Selections
     [SerializeField] private BodyPartSelection[] bodyPartSelections;
 
     private void Start()
@@ -71,18 +64,18 @@ public class BodyPartsSelector : MonoBehaviour
 
     private void GetCurrentBodyParts(int partIndex)
     {
-        // Get Current Body Part Name
-        bodyPartSelections[partIndex].bodyPartNameTextComponent.text = characterBody.characterBodyParts[partIndex].bodyPart.bodyPartName;
-        // Get Current Body Part Animation ID
-        bodyPartSelections[partIndex].bodyPartCurrentIndex = characterBody.characterBodyParts[partIndex].bodyPart.bodyPartAnimationID;
+        SO_BodyPart currentPlayerBodyPart = characterBody.characterBodyParts[partIndex].bodyPart;
+        bodyPartSelections[partIndex].bodyPartNameTextComponent.text = currentPlayerBodyPart.bodyPartName;
+        bodyPartSelections[partIndex].bodyPartCurrentIndex = currentPlayerBodyPart.bodyPartAnimationID;
     }
 
     private void UpdateCurrentPart(int partIndex)
     {
-        // Update Selection Name Text
-        bodyPartSelections[partIndex].bodyPartNameTextComponent.text = bodyPartSelections[partIndex].bodyPartOptions[bodyPartSelections[partIndex].bodyPartCurrentIndex].bodyPartName;
-        // Update Character Body Part
-        characterBody.characterBodyParts[partIndex].bodyPart = bodyPartSelections[partIndex].bodyPartOptions[bodyPartSelections[partIndex].bodyPartCurrentIndex];
+        int currentIndex = bodyPartSelections[partIndex].bodyPartCurrentIndex;
+        SO_BodyPart bodyPartOptions = bodyPartSelections[partIndex].bodyPartOptions[currentIndex];
+
+        bodyPartSelections[partIndex].bodyPartNameTextComponent.text = bodyPartOptions.bodyPartName;
+        characterBody.characterBodyParts[partIndex].bodyPart = bodyPartOptions;
     }
 }
 

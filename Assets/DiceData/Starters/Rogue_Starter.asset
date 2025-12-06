@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fae320b5e3afaa342ac6aefceabf61b9, type: 3}
+  m_Name: Rogue_Starter
+  m_EditorClassIdentifier: Assembly-CSharp::Dice
+  faces:
+  - {fileID: 11400000, guid: 65a60236b2c21974f908939e15480856, type: 2}
+  - {fileID: 11400000, guid: 65a60236b2c21974f908939e15480856, type: 2}
+  - {fileID: 11400000, guid: cd3dc5efce0652841814a077f2229cc9, type: 2}
+  - {fileID: 11400000, guid: bd93710267a570f4384d7b7cb2a7a8fc, type: 2}
+  - {fileID: 11400000, guid: ddcd2f0cb14670246936fc0d5cbd9ba2, type: 2}
+  - {fileID: 11400000, guid: ddcd2f0cb14670246936fc0d5cbd9ba2, type: 2}

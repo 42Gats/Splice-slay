@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7174490015984034194}
   - component: {fileID: 1730686369213693798}
   - component: {fileID: 3073367771295298371}
+  - component: {fileID: 422972762942509534}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -142,3 +143,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &422972762942509534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2800922769274151393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5489da221204dd34ea1550028ca1d5ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyFighter
+  fighterName: Fighter
+  damageReductionBuff: 0
+  maxDamageReduction: 0.8
+  animator: {fileID: 1730686369213693798}
+  shield: 0
+  enemyStats:
+    maxHP: 75
+    currentHP: 75
+    ATK: 100
+    DEF: 5
+    SPD: 10
+    CC: 5
+    CD: 150

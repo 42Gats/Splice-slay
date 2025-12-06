@@ -25,7 +25,6 @@ public class DiceRoller : MonoBehaviour
     }
 
     // Plays the roll animation, waits for it to finish, then returns the rolled faces via callback.
-    public IEnumerator RollDiceWithAnimation(System.Action<DiceFace[]> onComplete)
     {
         if (diceAnimator != null && !string.IsNullOrEmpty(rollTrigger))
         {

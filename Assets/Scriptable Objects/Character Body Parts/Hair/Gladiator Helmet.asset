@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d56554f0f28e3174b9b0f26242568028, type: 3}
   m_Name: Gladiator Helmet
   m_EditorClassIdentifier: 
-  bodyPartName: Mohawk
-  bodyPartAnimationID: 0
+  bodyPartName: Gladiator Helmet
+  bodyPartAnimationID: 2
   synergyTags: 0600000005000000
   stats:
     HP: 20

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d56554f0f28e3174b9b0f26242568028, type: 3}
   m_Name: Demon Horn
   m_EditorClassIdentifier: 
-  bodyPartName: Casual Swoop
-  bodyPartAnimationID: 1
+  bodyPartName: Demon Horn
+  bodyPartAnimationID: 0
   synergyTags: 0300000004000000
   stats:
     HP: -10

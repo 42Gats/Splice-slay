@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d56554f0f28e3174b9b0f26242568028, type: 3}
   m_Name: Flower crown
   m_EditorClassIdentifier: 
-  bodyPartName: Mohawk
-  bodyPartAnimationID: 0
+  bodyPartName: Flower crown
+  bodyPartAnimationID: 1
   synergyTags: 0200000001000000
   stats:
     HP: 10

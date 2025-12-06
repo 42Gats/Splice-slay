@@ -12,6 +12,8 @@ public class CombatManager : MonoBehaviour
 
     public DiceRoller diceRoller;
 
+    private bool quickStrikeUsedThisTurn = false;
+
     void Start()
     {
         state = CombatState.PlayerTurn;
@@ -166,22 +168,20 @@ public class CombatManager : MonoBehaviour
     void ApplyShield(int tier)
     {
         Debug.Log($"Applying SHIELD tier {tier}");
-        float[] pct = { 0f, 0.10f, 0.50f, 1.00f };
-        int shieldAmount = Mathf.RoundToInt(player.maxHP * pct[Mathf.Clamp(tier, 1, 3)]);
-        player.AddShield(shieldAmount);
-        Debug.Log($"Shield gained: {shieldAmount}");
+        float[] reduction = { 0f, 0.10f, 0.50f, 1.00f };
+        player.AddDamageReduction(reduction[tier]);
+        Debug.Log($"reduction: {reduction}");
     }
 
     void ApplyShieldBash(int tier)
     {
         Debug.Log($"Applying SHIELD BASH tier {tier}");
-        float[] reducePct = { 0f, 0.05f, 0.25f, 0.50f };
+        float[] reduce = { 0f, 0.05f, 0.25f, 0.50f };
         float[] dmgMul = { 1f, 0.5f, 0.75f, 1.5f };
 
-        int tempShield = Mathf.RoundToInt(player.maxHP * reducePct[Mathf.Clamp(tier, 1, 3)]);
-        player.AddShield(tempShield);
+        player.AddDamageReduction(reduce[tier]);
 
-        int dmg = Mathf.RoundToInt(player.attackDamage * dmgMul[Mathf.Clamp(tier, 1, 3)]);
+        int dmg = Mathf.RoundToInt(player.attackDamage * dmgMul[tier]);
         player.Attack(enemy, dmg);
     }
 
@@ -200,13 +200,21 @@ public class CombatManager : MonoBehaviour
     {
         Debug.Log($"Applying QUICK STRIKE tier {tier}");
         float[] dmgMul = { 1f, 0.7f, 1.2f, 1.8f };
-        int dmg = Mathf.RoundToInt(player.attackDamage * dmgMul[Mathf.Clamp(tier, 1, 3)]);
+        int dmg = Mathf.RoundToInt(player.attackDamage * dmgMul[tier]);
         player.Attack(enemy, dmg);
 
-        DiceFace[] extra = diceRoller.RollDice();
-        Debug.Log("QuickStrike triggered an extra roll:");
-        foreach (var r in extra) Debug.Log($" - {r.type}");
-        ApplyDiceResults(extra);
+        if (!quickStrikeUsedThisTurn)
+        {
+            Debug.Log("QuickStrike triggered an extra roll:");
+            quickStrikeUsedThisTurn = true;
+
+            DiceFace[] extra = diceRoller.RollDice();
+            ApplyDice(extra);
+        }
+        else
+        {
+            Debug.Log("QuickStrike ignoré : déjà utilisé ce tour.");
+        }
     }
 
     void ApplyShadowStep(int tier)

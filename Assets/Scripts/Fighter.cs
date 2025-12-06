@@ -1,4 +1,3 @@
-// Assets/Scripts/Fighter.cs
 using System;
 using System.Collections;
 using UnityEngine;
@@ -6,9 +5,17 @@ using UnityEngine;
 public class Fighter : MonoBehaviour
 {
     public string fighterName = "Fighter";
+
     public int maxHP = 100;
     public int currentHP;
     public int attackDamage = 10;
+
+    public float defense = 0f;
+    public float critChance = 0.1f;
+    public float critDamageMultiplier = 2f;
+
+    public float damageReductionBuff = 0f;
+    public float maxDamageReduction = 0.80f;
 
     public Animator animator;
     public Action OnDeath;
@@ -25,7 +32,12 @@ public class Fighter : MonoBehaviour
 
     public void TakeDamage(int dmg)
     {
-        int remaining = dmg;
+        float reduced = dmg * (1f - Mathf.Clamp(damageReductionBuff, 0f, 1f));
+
+        float defenseFactor = 100f / (100f + defense);
+        int finalDamage = Mathf.RoundToInt(reduced * defenseFactor);
+
+        int remaining = finalDamage;
 
         if (shield > 0)
         {
@@ -40,54 +52,72 @@ public class Fighter : MonoBehaviour
             currentHP = Mathf.Max(0, currentHP);
         }
 
-        if (animator != null) animator.SetTrigger("Hit");
+        if (animator) animator.SetTrigger("Hit");
 
         if (currentHP <= 0)
         {
             currentHP = 0;
-            if (animator != null) animator.SetTrigger("Death");
+            if (animator) animator.SetTrigger("Death");
             OnDeath?.Invoke();
         }
     }
 
-    public void AddShield(int amount)
+public void AddShield(int amount)
+{
+    shield += amount;
+}
+
+public void ResetDamageReduction()
     {
-        shield += amount;
+        damageReductionBuff = 0f;
+    }
+
+    public void AddDamageReduction(float value)
+    {
+        damageReductionBuff = Mathf.Clamp(
+            damageReductionBuff + value,
+            0f,
+            maxDamageReduction
+        );
     }
 
     public void HealPercent(float percent)
     {
         int heal = Mathf.RoundToInt(maxHP * percent);
-        currentHP += heal;
-        currentHP = Mathf.Min(currentHP, maxHP);
+        currentHP = Mathf.Min(currentHP + heal, maxHP);
     }
 
     public void HealFlat(int amount)
     {
-        currentHP += amount;
-        currentHP = Mathf.Min(currentHP, maxHP);
+        currentHP = Mathf.Min(currentHP + amount, maxHP);
     }
 
-    public void Attack(Fighter target, int damageOverride = -1)
+    public void Attack(Fighter target, int overrideDamage = -1)
     {
-        if (animator != null) animator.SetTrigger("Attack");
-        int dmg = (damageOverride > -1) ? damageOverride : attackDamage;
+        int dmg = (overrideDamage > -1 ? overrideDamage : attackDamage);
+
+        if (UnityEngine.Random.value < critChance)
+        {
+            dmg = Mathf.RoundToInt(dmg * critDamageMultiplier);
+        }
+
+        if (animator) animator.SetTrigger("Attack");
         target.TakeDamage(dmg);
     }
 
-    public void ApplyBleed(float percentOfMaxPerTick, int ticks, float tickIntervalSeconds = 1f)
+    public void ApplyBleed(float percent, int ticks, float interval)
     {
         if (bleedCoroutine != null) StopCoroutine(bleedCoroutine);
-        bleedCoroutine = StartCoroutine(BleedCoroutine(percentOfMaxPerTick, ticks, tickIntervalSeconds));
+        bleedCoroutine = StartCoroutine(BleedCoroutine(percent, ticks, interval));
     }
 
-    private IEnumerator BleedCoroutine(float percentOfMaxPerTick, int ticks, float tickInterval)
+    IEnumerator BleedCoroutine(float percent, int ticks, float interval)
     {
         for (int i = 0; i < ticks; i++)
         {
-            int dmg = Mathf.RoundToInt(maxHP * percentOfMaxPerTick);
+            int dmg = Mathf.RoundToInt(maxHP * percent);
             TakeDamage(dmg);
-            yield return new WaitForSeconds(tickInterval);
+            yield return new WaitForSeconds(interval);
         }
         bleedCoroutine = null;
     }

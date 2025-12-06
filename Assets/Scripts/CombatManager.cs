@@ -42,7 +42,7 @@ public class CombatManager : MonoBehaviour
 
         ApplyDiceResults(results);
 
-        yield return new WaitForSeconds(0.7f);
+        // yield return new WaitForSeconds(0.7f);
 
         if (enemy.stats.GetCurrentHP() <= 0)
         {
@@ -69,7 +69,7 @@ public class CombatManager : MonoBehaviour
         }
         
         // Brief pause before returning to player turn
-        yield return new WaitForSeconds(0.5f);
+        // yield return new WaitForSeconds(0.5f);
 
         state = CombatState.PlayerTurn;
     }

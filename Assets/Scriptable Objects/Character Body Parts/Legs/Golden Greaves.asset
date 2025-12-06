@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Golden Greaves
   m_EditorClassIdentifier: 
   bodyPartName: Golden Greaves
-  bodyPartAnimationID: 1
+  bodyPartAnimationID: 0
   synergyTags: 0600000000000000
   stats:
     HP: 0

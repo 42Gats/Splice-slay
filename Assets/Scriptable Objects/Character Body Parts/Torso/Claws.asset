@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartName: Claws
   bodyPartAnimationID: 1
-  synergyTags: 0200000003000000
+  synergyTags: 0300000002000000
   stats:
     HP: 0
-    ATK: 0
+    ATK: 15
     SPD: 0
-    DEF: 0
-    CC: 0
+    DEF: -2
+    CC: 5
     CD: 0
   allBodyPartAnimations:
   - {fileID: 7400000, guid: 6d3a7adfcdc562347aebefc1ff5ecc7b, type: 2}

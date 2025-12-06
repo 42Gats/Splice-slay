@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Vine Shoulder Piece
   m_EditorClassIdentifier: 
   bodyPartName: Vine Shoulder Piece
-  bodyPartAnimationID: 2
+  bodyPartAnimationID: 1
   synergyTags: 0200000005000000
   stats:
     HP: 0

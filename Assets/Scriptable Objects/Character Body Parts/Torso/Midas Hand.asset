@@ -17,10 +17,10 @@ MonoBehaviour:
   synergyTags: 0000000004000000
   stats:
     HP: 0
-    ATK: 0
+    ATK: 10
     SPD: 0
     DEF: 0
-    CC: 0
+    CC: 10
     CD: 0
   allBodyPartAnimations:
   - {fileID: 7400000, guid: 6ad56b1ec95443a40991fb65b28e3778, type: 2}

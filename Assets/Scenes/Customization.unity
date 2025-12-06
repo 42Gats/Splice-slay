@@ -459,6 +459,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6276047087813280950}
+        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
+        m_MethodName: OnEquipmentChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2009948939}
+        m_TargetAssemblyTypeName: DisplayStats, Assembly-CSharp
+        m_MethodName: UpdateStatsDisplay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &130068739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1803,6 +1827,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2009948939}
+        m_TargetAssemblyTypeName: DisplayStats, Assembly-CSharp
+        m_MethodName: UpdateStatsDisplay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1845261384}
         m_TargetAssemblyTypeName: BodyPartsSelector, Assembly-CSharp
         m_MethodName: NextBodyPart
@@ -1818,6 +1854,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2171288949409175676}
         m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
         m_MethodName: UpdateBodyParts
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6276047087813280950}
+        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
+        m_MethodName: OnEquipmentChanged
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2596,6 +2644,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2009948939}
+        m_TargetAssemblyTypeName: DisplayStats, Assembly-CSharp
+        m_MethodName: UpdateStatsDisplay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1845261384}
         m_TargetAssemblyTypeName: BodyPartsSelector, Assembly-CSharp
         m_MethodName: NextBodyPart
@@ -2611,6 +2671,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2171288949409175676}
         m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
         m_MethodName: UpdateBodyParts
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6276047087813280950}
+        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
+        m_MethodName: OnEquipmentChanged
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3718,6 +3790,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2009948939}
+        m_TargetAssemblyTypeName: DisplayStats, Assembly-CSharp
+        m_MethodName: UpdateStatsDisplay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1845261384}
         m_TargetAssemblyTypeName: BodyPartsSelector, Assembly-CSharp
         m_MethodName: PreviousBody
@@ -3733,6 +3817,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2171288949409175676}
         m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
         m_MethodName: UpdateBodyParts
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6276047087813280950}
+        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
+        m_MethodName: OnEquipmentChanged
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5032,24 +5128,28 @@ MonoBehaviour:
     bodyPartOptions:
     - {fileID: 11400000, guid: 04184ccc187ebeb4898134b291bec24b, type: 2}
     - {fileID: 11400000, guid: 48cdaf5d95f59d94a8fa889ff85dcc07, type: 2}
+    - {fileID: 11400000, guid: 49420c3a7856d0e4180d96dfbe01708d, type: 2}
     bodyPartNameTextComponent: {fileID: 1992151193}
     bodyPartCurrentIndex: 0
   - bodyPartName: Hair
     bodyPartOptions:
     - {fileID: 11400000, guid: 6cbe392ad638a864daa283f1419d4412, type: 2}
     - {fileID: 11400000, guid: 7a2a182ab3c50ce44a5e03b296084fb5, type: 2}
+    - {fileID: 11400000, guid: a9e5e8aeb33ee794282c6fc34372e375, type: 2}
     bodyPartNameTextComponent: {fileID: 1913327792}
     bodyPartCurrentIndex: 0
   - bodyPartName: Torso
     bodyPartOptions:
     - {fileID: 11400000, guid: 1344766a0a65f164aa04b98df2bc5bd3, type: 2}
     - {fileID: 11400000, guid: bc32bae8dd8f0ce41a514cf6fd504e3c, type: 2}
+    - {fileID: 11400000, guid: 83117d11012fa8347828fcf60594485a, type: 2}
     bodyPartNameTextComponent: {fileID: 2032667871}
     bodyPartCurrentIndex: 0
   - bodyPartName: Legs
     bodyPartOptions:
     - {fileID: 11400000, guid: 3446583dbcbcedb49ae7587f7ef2e7dc, type: 2}
     - {fileID: 11400000, guid: 664153d2da20a6b4fb38d1ab9adedfb1, type: 2}
+    - {fileID: 11400000, guid: fede4583e1a6136499b369a5647bcc2f, type: 2}
     bodyPartNameTextComponent: {fileID: 1007308684}
     bodyPartCurrentIndex: 0
 --- !u!114 &1845261385
@@ -5359,6 +5459,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2009948939}
+        m_TargetAssemblyTypeName: DisplayStats, Assembly-CSharp
+        m_MethodName: UpdateStatsDisplay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1845261384}
         m_TargetAssemblyTypeName: BodyPartsSelector, Assembly-CSharp
         m_MethodName: NextBodyPart
@@ -5374,6 +5486,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2171288949409175676}
         m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
         m_MethodName: UpdateBodyParts
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6276047087813280950}
+        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
+        m_MethodName: OnEquipmentChanged
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5661,6 +5785,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2009948939}
+        m_TargetAssemblyTypeName: DisplayStats, Assembly-CSharp
+        m_MethodName: UpdateStatsDisplay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1845261384}
         m_TargetAssemblyTypeName: BodyPartsSelector, Assembly-CSharp
         m_MethodName: PreviousBody
@@ -5676,6 +5812,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2171288949409175676}
         m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
         m_MethodName: UpdateBodyParts
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6276047087813280950}
+        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
+        m_MethodName: OnEquipmentChanged
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5884,6 +6032,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2009948939}
+        m_TargetAssemblyTypeName: DisplayStats, Assembly-CSharp
+        m_MethodName: UpdateStatsDisplay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1845261384}
         m_TargetAssemblyTypeName: BodyPartsSelector, Assembly-CSharp
         m_MethodName: PreviousBody
@@ -5899,6 +6059,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2171288949409175676}
         m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
         m_MethodName: UpdateBodyParts
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6276047087813280950}
+        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
+        m_MethodName: OnEquipmentChanged
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6393,6 +6565,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2009948939}
+        m_TargetAssemblyTypeName: DisplayStats, Assembly-CSharp
+        m_MethodName: UpdateStatsDisplay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1845261384}
         m_TargetAssemblyTypeName: BodyPartsSelector, Assembly-CSharp
         m_MethodName: PreviousBody
@@ -6408,6 +6592,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2171288949409175676}
         m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
         m_MethodName: UpdateBodyParts
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6276047087813280950}
+        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
+        m_MethodName: OnEquipmentChanged
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

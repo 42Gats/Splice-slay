@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Demon Horn
   m_EditorClassIdentifier: 
   bodyPartName: Demon Horn
-  bodyPartAnimationID: 0
+  bodyPartAnimationID: 1
   synergyTags: 0300000004000000
   stats:
     HP: -10

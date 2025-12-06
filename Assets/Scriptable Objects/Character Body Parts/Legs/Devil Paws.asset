@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Devil Paws
   m_EditorClassIdentifier: 
   bodyPartName: Devil Paws
-  bodyPartAnimationID: 0
+  bodyPartAnimationID: 1
   synergyTags: 0400000002000000
   stats:
     HP: 0

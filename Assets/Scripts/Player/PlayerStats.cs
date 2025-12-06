@@ -60,6 +60,7 @@ public class PlayerStats : MonoBehaviour
         if (playerClass == null) return;
         
         currentClass = playerClass;
+        CalculateStats();
     }
 
     public void OnEquipmentChanged()
@@ -77,7 +78,6 @@ public class PlayerStats : MonoBehaviour
         {
             equipmentStats *= 1.3f;
         }
-
         finalStats += equipmentStats;
 
         ApplySynergies();

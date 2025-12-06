@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyPartName: Ceremonial Robe
   bodyPartAnimationID: 0
-  synergyTags: 0100000000000000
+  synergyTags: 0000000001000000
   stats:
     HP: 0
     ATK: 10

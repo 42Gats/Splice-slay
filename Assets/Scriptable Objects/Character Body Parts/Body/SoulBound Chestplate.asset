@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SoulBound Chestplate
   m_EditorClassIdentifier: 
   bodyPartName: Soul Bound Chestplate
-  bodyPartAnimationID: 1
+  bodyPartAnimationID: 2
   synergyTags: 0400000006000000
   stats:
     HP: 10

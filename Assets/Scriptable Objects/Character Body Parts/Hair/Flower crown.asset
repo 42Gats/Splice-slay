@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Flower crown
   m_EditorClassIdentifier: 
   bodyPartName: Flower crown
-  bodyPartAnimationID: 1
+  bodyPartAnimationID: 0
   synergyTags: 0200000001000000
   stats:
     HP: 10

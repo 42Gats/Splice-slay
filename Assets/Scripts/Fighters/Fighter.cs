@@ -46,7 +46,6 @@ public abstract class Fighter : MonoBehaviour
             currentHP -= remaining;
             currentHP = Mathf.Max(0, currentHP);
             stats.SetCurrentHP(currentHP);
-            Debug.Log($"{fighterName} took {finalDamage} damage, reduced to {remaining} after shield. Current HP: {currentHP}");
         }
         
         if (animator) animator.SetTrigger("Hit");
@@ -100,10 +99,9 @@ public abstract class Fighter : MonoBehaviour
     {        
         float critChance = stats.GetCC() / 100f;
         float attackDamage = stats.GetATK();
-        Debug.Log($"{fighterName} attacking {target.fighterName} with base ATK {attackDamage}, CC {critChance*100}%, CD {stats.GetCD()}%");
         float critDamageMultiplier = stats.GetCD() / 100f;
         
-        int dmg = (overrideDamage > -1 ? overrideDamage : Mathf.RoundToInt(attackDamage));
+        int dmg = overrideDamage > -1 ? overrideDamage : Mathf.RoundToInt(attackDamage);
         
         if (UnityEngine.Random.value < critChance)
         {

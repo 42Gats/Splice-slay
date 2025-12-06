@@ -32,6 +32,8 @@ public class PlayerStats : MonoBehaviour
 
     public System.Action OnStatsChanged;
 
+    private bool elfRevived = false;
+
     private void Awake()
     {
         currentHP = baseStats.HP;
@@ -266,7 +268,12 @@ public class PlayerStats : MonoBehaviour
     {
         return currentRace != null && 
                currentRace.race == Race.ELF && 
-               HasSynergyTier(SynergyTag.NATURE, 3);
+               HasSynergyTier(SynergyTag.NATURE, 3) && !elfRevived;
+    }
+
+    public void SetElfRevived(bool revived)
+    {
+        elfRevived = revived;
     }
 
     public float GetReflectDamage()

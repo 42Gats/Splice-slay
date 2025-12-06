@@ -15,20 +15,7 @@ public class PlayerFighter : Fighter
     
     public override void Attack(Fighter target, int overrideDamage = -1)
     {        
-        float critChance = playerStats.GetCC() / 100f;
-        
-        // Gobelin avec synergy Golden : crit garanti tous les 5 attacks
-        if (playerStats.IsGobelinWithGolden())
-        {
-            Debug.Log("+1 with gobelin dice");
-            gobelinGoldenCountDice++;
-            if (gobelinGoldenCountDice >= 5)
-            {
-                Debug.Log("Gobelin Golden crit activated!");
-                critChance = 1.0f;
-                gobelinGoldenCountDice = 0;
-            }
-        }
+        float critChance = CalculateCritChance();
         
         float attackDamage = playerStats.GetATK();
         
@@ -36,7 +23,7 @@ public class PlayerFighter : Fighter
         attackDamage += playerStats.GetWarHeroBonusDamage();
         
         float critDamageMultiplier = playerStats.GetCD() / 100f;
-        int dmg = (overrideDamage > -1 ? overrideDamage : Mathf.RoundToInt(attackDamage));
+        int dmg = overrideDamage > -1 ? overrideDamage : Mathf.RoundToInt(attackDamage);
         
         if (UnityEngine.Random.value < critChance)
         {
@@ -61,9 +48,9 @@ public class PlayerFighter : Fighter
         // Elf revive (Nature synergy tier 3)
         if (playerStats.GetCurrentHP() <= 0 && playerStats.CanElfReviveOnce())
         {
-            HealPercent(0.5f);
+            HealPercent(0.15f);
+            playerStats.SetElfRevived(true);
             Debug.Log($"{fighterName} revived as Elf!");
-            // TODO: Désactiver la capacité de revive pour ce combat
         }
     }
     
@@ -75,7 +62,26 @@ public class PlayerFighter : Fighter
             HealPercent(healPercent);
         }
     }
-    
+
+    private float CalculateCritChance()
+    {
+        float critChance = playerStats.GetCC() / 100f;
+        
+        // Gobelin avec synergy Golden : crit garanti tous les 5 attacks
+        if (playerStats.IsGobelinWithGolden())
+        {
+            Debug.Log("+1 with gobelin dice");
+            gobelinGoldenCountDice++;
+            if (gobelinGoldenCountDice >= 5)
+            {
+                Debug.Log("Gobelin Golden crit activated!");
+                critChance = 1.0f;
+                gobelinGoldenCountDice = 0;
+            }
+        }
+
+        return critChance;
+    }    
     // Adapter pour PlayerStats -> IFighterStats
     private class PlayerStatsAdapter : IFighterStats
     {

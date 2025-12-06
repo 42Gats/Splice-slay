@@ -599,7 +599,7 @@ Animator:
   m_GameObject: {fileID: 4849602830065882112}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 07b41e9e5ec569f44b6725665f135e91, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0aa6e041dad76c34eb34ca30f7261024, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -852,7 +852,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9032065725909132005}
   - component: {fileID: 3162513750425604989}
-  - component: {fileID: 147834500973403893}
+  - component: {fileID: 4853735261658337230}
   m_Layer: 0
   m_Name: Face 01
   m_TagString: Untagged
@@ -934,7 +934,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &147834500973403893
+--- !u!114 &4853735261658337230
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

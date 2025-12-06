@@ -8,8 +8,9 @@ public class DiceRoller : MonoBehaviour
 
     [Header("Animation")]
     [SerializeField] private Animator diceAnimator;
-    [SerializeField] private string rollTrigger = "Roll";
+    [SerializeField] private string rollTrigger = "Rolling";
     [SerializeField] private float rollDuration = 1.0f; // Seconds to wait for roll animation
+    // [SerializeField] private bool isRolling = false;
 
     public DiceFace[] RollDice()
     {
@@ -30,6 +31,7 @@ public class DiceRoller : MonoBehaviour
         if (diceAnimator != null && !string.IsNullOrEmpty(rollTrigger))
         {
             diceAnimator.SetTrigger(rollTrigger);
+            // diceAnimator.SetBool("Rolling", true);
         }
 
         // Wait for the animation to play

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_Race
   race: 1
   raceName: Elf
-  associatedTag: 2
+  synergyTag: 2
   description: Friends don't lie.

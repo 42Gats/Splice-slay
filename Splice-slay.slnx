@@ -25,8 +25,8 @@
   <Project Path="Unity.InputSystem.csproj" />
   <Project Path="Unity.AI.Animate.csproj" />
   <Project Path="Unity.AI.Toolkit.Accounts.csproj" />
-  <Project Path="Unity.2D.Animation.Editor.csproj" />
   <Project Path="Unity.InferenceEngine.csproj" />
+  <Project Path="Unity.2D.Animation.Editor.csproj" />
   <Project Path="Unity.Searcher.Editor.csproj" />
   <Project Path="Unity.AI.Generators.Redux.csproj" />
   <Project Path="Unity.AI.Sound.csproj" />
@@ -55,7 +55,6 @@
   <Project Path="Unity.VisualScripting.State.csproj" />
   <Project Path="Unity.InternalAPIEditorBridge.001.csproj" />
   <Project Path="Unity.AI.Generators.Sdk.csproj" />
-  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Unity.AppUI.MVVM.csproj" />
   <Project Path="Unity.AI.Generators.UI.csproj" />
   <Project Path="Unity.AI.Assistant.Agent.Dynamic.Extension.Editor.csproj" />
@@ -66,6 +65,7 @@
   <Project Path="Unity.2D.Animation.Runtime.csproj" />
   <Project Path="Unity.Mathematics.Editor.csproj" />
   <Project Path="Unity.VisualScripting.SettingsProvider.Editor.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Unity.AI.Toolkit.GenerationContextMenu.csproj" />
   <Project Path="Unity.2D.Common.Runtime.csproj" />
   <Project Path="Unity.AI.Generators.UI.AIDropdownIntegrations.csproj" />
@@ -78,8 +78,8 @@
   <Project Path="Unity.AI.Toolkit.Async.csproj" />
   <Project Path="Unity.VisualScripting.Shared.Editor.csproj" />
   <Project Path="Unity.AppUI.Redux.Editor.csproj" />
-  <Project Path="Unity.2D.Aseprite.Common.csproj" />
   <Project Path="Unity.AI.Toolkit.Compliance.csproj" />
+  <Project Path="Unity.2D.Aseprite.Common.csproj" />
   <Project Path="Unity.2D.Enhancers.Editor.AIBridge.csproj" />
   <Project Path="Unity.AppUI.Undo.csproj" />
   <Project Path="Unity.AI.Generators.Contexts.csproj" />

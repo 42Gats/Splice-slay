@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23a96a401d936a7479302d512f9f8d8f, type: 3}
+  m_Name: Golden
+  m_EditorClassIdentifier: Assembly-CSharp::SO_Synergy
+  tag: 0
+  synergyName: Golden
+  tiers:
+  - requiredCount: 1
+    description: "Increase CC by 10% and CD by 20%. If you're a Gobelin, every 5
+      \u201Cattack dice\u201D is guaranteed to be a critical hit."
+    statBonus:
+      HP: 0
+      ATK: 0
+      SPD: 0
+      DEF: 0
+      CC: 0
+      CD: 0
+    hpMultiplier: 1
+    atkMultiplier: 1
+    defMultiplier: 1
+    spdMultiplier: 1
+    ccMultiplier: 1.1
+    cdMultiplier: 1.2
+  - requiredCount: 3
+    description: "Increase CC by 25% and CD by 40%. If you're a Gobelin, every 5
+      \u201Cattack dice\u201D is guaranteed to be a critical hit."
+    statBonus:
+      HP: 0
+      ATK: 0
+      SPD: 0
+      DEF: 0
+      CC: 0
+      CD: 0
+    hpMultiplier: 1
+    atkMultiplier: 1
+    defMultiplier: 1
+    spdMultiplier: 1
+    ccMultiplier: 1.25
+    cdMultiplier: 1.4
+  - requiredCount: 5
+    description: "Increase CC by 40% and CD by 70%. If you're a Gobelin, every 5
+      \u201Cattack dice\u201D is guaranteed to be a critical hit."
+    statBonus:
+      HP: 0
+      ATK: 0
+      SPD: 0
+      DEF: 0
+      CC: 0
+      CD: 0
+    hpMultiplier: 1
+    atkMultiplier: 1
+    defMultiplier: 1
+    spdMultiplier: 1
+    ccMultiplier: 1.4
+    cdMultiplier: 1.7

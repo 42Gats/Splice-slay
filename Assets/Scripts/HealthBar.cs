@@ -8,17 +8,24 @@ public class HealthBar : MonoBehaviour
 
     void Start()
     {
+        Reset();
+    }
+
+    public void Reset()
+    {
         if (slider == null) slider = GetComponent<Slider>();
         if (target != null)
         {
-            slider.maxValue = target.maxHP;
-            slider.value = target.currentHP;
+            Debug.Log("Initializing HealthBar for " + target.name);
+            slider.maxValue = target.stats.GetMaxHP();
+            slider.value = target.stats.GetCurrentHP();
+            Debug.Log("HealthBar initialized: MaxHP = " + slider.maxValue + ", CurrentHP = " + slider.value);
         }
     }
 
     void Update()
     {
         if (target != null && slider != null)
-            slider.value = target.currentHP;
+            slider.value = target.stats.GetCurrentHP();
     }
 }

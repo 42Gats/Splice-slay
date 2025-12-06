@@ -447,7 +447,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2171288949409175676}
+      - m_Target: {fileID: 1520469178}
         m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
         m_MethodName: UpdateBodyParts
         m_Mode: 1
@@ -459,7 +459,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6276047087813280950}
+      - m_Target: {fileID: 1520469177}
         m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
         m_MethodName: OnEquipmentChanged
         m_Mode: 1
@@ -654,7 +654,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &311181258
 RectTransform:
   m_ObjectHideFlags: 0
@@ -718,7 +718,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7434876419139029271}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RotatePlayer, Assembly-CSharp
         m_MethodName: RotateLeft
         m_Mode: 1
@@ -1433,6 +1433,79 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 557625982}
   m_CullTransparentMesh: 1
+--- !u!1001 &628162516
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1299439090171625055, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3066459382179428573, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: m_AnimatePhysics
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
 --- !u!1 &650464627
 GameObject:
   m_ObjectHideFlags: 0
@@ -1851,9 +1924,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2171288949409175676}
-        m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
-        m_MethodName: UpdateBodyParts
+      - m_Target: {fileID: 1520469177}
+        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
+        m_MethodName: OnEquipmentChanged
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1863,9 +1936,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6276047087813280950}
-        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
-        m_MethodName: OnEquipmentChanged
+      - m_Target: {fileID: 1520469178}
+        m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
+        m_MethodName: UpdateBodyParts
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2668,9 +2741,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2171288949409175676}
-        m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
-        m_MethodName: UpdateBodyParts
+      - m_Target: {fileID: 1520469177}
+        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
+        m_MethodName: OnEquipmentChanged
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2680,9 +2753,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6276047087813280950}
-        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
-        m_MethodName: OnEquipmentChanged
+      - m_Target: {fileID: 1520469178}
+        m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
+        m_MethodName: UpdateBodyParts
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3814,9 +3887,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2171288949409175676}
-        m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
-        m_MethodName: UpdateBodyParts
+      - m_Target: {fileID: 1520469177}
+        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
+        m_MethodName: OnEquipmentChanged
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3826,9 +3899,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6276047087813280950}
-        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
-        m_MethodName: OnEquipmentChanged
+      - m_Target: {fileID: 1520469178}
+        m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
+        m_MethodName: UpdateBodyParts
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3967,7 +4040,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1457812339
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4031,7 +4104,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7434876419139029271}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RotatePlayer, Assembly-CSharp
         m_MethodName: RotateRight
         m_Mode: 1
@@ -4160,6 +4233,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475406616}
   m_CullTransparentMesh: 1
+--- !u!114 &1520469177 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1957684844292108897, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+  m_PrefabInstance: {fileID: 628162516}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07cb71056bc9e1f45a4ac69991b67fb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
+--- !u!114 &1520469178 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -4589033460241453723, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+  m_PrefabInstance: {fileID: 628162516}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528f6dc4487ecae4c9d804f9444e3ad4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BodyPartsManager
 --- !u!1 &1543316957
 GameObject:
   m_ObjectHideFlags: 0
@@ -5483,9 +5578,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2171288949409175676}
-        m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
-        m_MethodName: UpdateBodyParts
+      - m_Target: {fileID: 1520469177}
+        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
+        m_MethodName: OnEquipmentChanged
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5495,9 +5590,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6276047087813280950}
-        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
-        m_MethodName: OnEquipmentChanged
+      - m_Target: {fileID: 1520469178}
+        m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
+        m_MethodName: UpdateBodyParts
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5809,9 +5904,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2171288949409175676}
-        m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
-        m_MethodName: UpdateBodyParts
+      - m_Target: {fileID: 1520469177}
+        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
+        m_MethodName: OnEquipmentChanged
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5821,9 +5916,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6276047087813280950}
-        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
-        m_MethodName: OnEquipmentChanged
+      - m_Target: {fileID: 1520469178}
+        m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
+        m_MethodName: UpdateBodyParts
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6056,9 +6151,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2171288949409175676}
-        m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
-        m_MethodName: UpdateBodyParts
+      - m_Target: {fileID: 1520469177}
+        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
+        m_MethodName: OnEquipmentChanged
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6068,9 +6163,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6276047087813280950}
-        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
-        m_MethodName: OnEquipmentChanged
+      - m_Target: {fileID: 1520469178}
+        m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
+        m_MethodName: UpdateBodyParts
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6239,7 +6334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65ebdbbdfe7083045b2c3adb09bf4493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DisplayStats
-  playerStats: {fileID: 6276047087813280950}
+  playerStats: {fileID: 1520469177}
   healthText: {fileID: 1598617988}
   attackText: {fileID: 1814609992}
   rerollingText: {fileID: 1414576370}
@@ -6589,9 +6684,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2171288949409175676}
-        m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
-        m_MethodName: UpdateBodyParts
+      - m_Target: {fileID: 1520469177}
+        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
+        m_MethodName: OnEquipmentChanged
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6601,9 +6696,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6276047087813280950}
-        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
-        m_MethodName: OnEquipmentChanged
+      - m_Target: {fileID: 1520469178}
+        m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
+        m_MethodName: UpdateBodyParts
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6846,7 +6941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edfaaf5e4e2364942b8fc6cef8fa3220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerTypeSelector
-  playerStats: {fileID: 6276047087813280950}
+  playerStats: {fileID: 1520469177}
   raceSelection:
     raceOptions:
     - {fileID: 11400000, guid: cf3f1136df1287f49b53623a1a2a5b89, type: 2}
@@ -6939,101 +7034,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2144380893}
   m_CullTransparentMesh: 1
---- !u!114 &2171288949409175676 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8446010424478597456, guid: 18b158dcbce88ae499f23b9394cf9746, type: 3}
-  m_PrefabInstance: {fileID: 3886271181611127370}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 528f6dc4487ecae4c9d804f9444e3ad4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BodyPartsManager
---- !u!1001 &3886271181611127370
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1175250091901709947, guid: 18b158dcbce88ae499f23b9394cf9746, type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828141048976513914, guid: 18b158dcbce88ae499f23b9394cf9746, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828141048976513914, guid: 18b158dcbce88ae499f23b9394cf9746, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.24458823
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828141048976513914, guid: 18b158dcbce88ae499f23b9394cf9746, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828141048976513914, guid: 18b158dcbce88ae499f23b9394cf9746, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828141048976513914, guid: 18b158dcbce88ae499f23b9394cf9746, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828141048976513914, guid: 18b158dcbce88ae499f23b9394cf9746, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828141048976513914, guid: 18b158dcbce88ae499f23b9394cf9746, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828141048976513914, guid: 18b158dcbce88ae499f23b9394cf9746, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828141048976513914, guid: 18b158dcbce88ae499f23b9394cf9746, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1828141048976513914, guid: 18b158dcbce88ae499f23b9394cf9746, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 18b158dcbce88ae499f23b9394cf9746, type: 3}
---- !u!114 &6276047087813280950 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3988096489576547994, guid: 18b158dcbce88ae499f23b9394cf9746, type: 3}
-  m_PrefabInstance: {fileID: 3886271181611127370}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07cb71056bc9e1f45a4ac69991b67fb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
---- !u!114 &7434876419139029271 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2278436395290999958, guid: 18b158dcbce88ae499f23b9394cf9746, type: 3}
-  m_PrefabInstance: {fileID: 3886271181611127370}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79878ca927349f14187cdfbb3a3b4ade, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RotatePlayer
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 441531665}
-  - {fileID: 3886271181611127370}
+  - {fileID: 628162516}
   - {fileID: 1654656512}
   - {fileID: 758116794}

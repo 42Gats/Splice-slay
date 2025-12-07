@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Claws
   m_EditorClassIdentifier: 
   bodyPartName: Claws
-  bodyPartAnimationID: 1
+  bodyPartAnimationID: 2
   synergyTags: 0300000002000000
   stats:
     HP: 0
@@ -22,12 +22,10 @@ MonoBehaviour:
     DEF: -2
     CC: 5
     CD: 0
-  allBodyPartAnimations:
-  - {fileID: 7400000, guid: 6d3a7adfcdc562347aebefc1ff5ecc7b, type: 2}
-  - {fileID: 7400000, guid: 01935b24bcbdc354cb283cacf2e175ac, type: 2}
-  - {fileID: 7400000, guid: 473a4d9153c614d4790868cf56bd2e2c, type: 2}
-  - {fileID: 7400000, guid: cde36def85458514b8a3a06a6b1955d5, type: 2}
-  - {fileID: 7400000, guid: cbfd8d1600a1e814ab7eeeaf8e5d4573, type: 2}
-  - {fileID: 7400000, guid: 78c259a53ea7cc1468a87ab09f02ad9a, type: 2}
-  - {fileID: 7400000, guid: 8b350d09a19b93144a1eb2068bc9c792, type: 2}
-  - {fileID: 7400000, guid: 1a0e2f5eafc63c44a8f651c4c1c502b5, type: 2}
+  bodyPartSprites:
+  - {fileID: 21300000, guid: 6eb0bf249ebddf44a840e2cb5fd67e54, type: 3}
+  - {fileID: 21300000, guid: bc695fb4b2827b54cb8f653a8a03b74c, type: 3}
+  - {fileID: 21300000, guid: 063aeed88e02fbc4b94773b7cf3a6312, type: 3}
+  - {fileID: 21300000, guid: b9a4702dccb704a4f8228b0ad861609f, type: 3}
+  - {fileID: 21300000, guid: 38eaee4d3b03c2644b7da5b1dccc0fb3, type: 3}
+  - {fileID: 21300000, guid: c6c72599fdb8d904e9dd12ce395ba0f8, type: 3}

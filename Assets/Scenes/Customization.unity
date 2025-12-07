@@ -198,6 +198,117 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20185649}
   m_CullTransparentMesh: 1
+--- !u!1001 &37398030
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1299439090171625055, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1373348601132827967, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1373348601132827967, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: Sprites.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1373348601132827967, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: 'Sprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: 21300000, guid: be85a752bbb079e41aec945f66667f21, type: 3}
+    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8409036881643948432, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: be85a752bbb079e41aec945f66667f21, type: 3}
+    - target: {fileID: 8409036881643948432, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1373348601132827967, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+--- !u!114 &37398031 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1957684844292108897, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+  m_PrefabInstance: {fileID: 37398030}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07cb71056bc9e1f45a4ac69991b67fb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
+--- !u!114 &37398032 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7768194057456546679, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+  m_PrefabInstance: {fileID: 37398030}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8e9dda14b6f34517a0d598d3320a902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &37398033 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -4589033460241453723, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
+  m_PrefabInstance: {fileID: 37398030}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528f6dc4487ecae4c9d804f9444e3ad4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BodyPartsManager
 --- !u!1 &59845247
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,9 +558,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1520469178}
-        m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
-        m_MethodName: UpdateBodyParts
+      - m_Target: {fileID: 37398031}
+        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
+        m_MethodName: OnEquipmentChanged
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -459,9 +570,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1520469177}
-        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
-        m_MethodName: OnEquipmentChanged
+      - m_Target: {fileID: 37398033}
+        m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
+        m_MethodName: UpdateBodyParts
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -718,7 +829,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1520469181}
+      - m_Target: {fileID: 37398032}
         m_TargetAssemblyTypeName: Spriter2UnityDX.EntityRenderer, Assembly-CSharp
         m_MethodName: PlayHurtAnimation
         m_Mode: 1
@@ -1433,83 +1544,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 557625982}
   m_CullTransparentMesh: 1
---- !u!1001 &628162516
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1299439090171625055, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 3066459382179428573, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
-      propertyPath: m_AnimatePhysics
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3135784947202753167, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
-      propertyPath: playerAnimationRenderer
-      value: 
-      objectReference: {fileID: 1520469181}
-    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5737965524912553810, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
 --- !u!1 &650464627
 GameObject:
   m_ObjectHideFlags: 0
@@ -1928,7 +1962,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1520469177}
+      - m_Target: {fileID: 37398031}
         m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
         m_MethodName: OnEquipmentChanged
         m_Mode: 1
@@ -1940,7 +1974,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1520469178}
+      - m_Target: {fileID: 37398033}
         m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
         m_MethodName: UpdateBodyParts
         m_Mode: 1
@@ -2745,9 +2779,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1520469177}
-        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
-        m_MethodName: OnEquipmentChanged
+      - m_Target: {fileID: 37398033}
+        m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
+        m_MethodName: UpdateBodyParts
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2757,9 +2791,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1520469178}
-        m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
-        m_MethodName: UpdateBodyParts
+      - m_Target: {fileID: 37398031}
+        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
+        m_MethodName: OnEquipmentChanged
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3208,6 +3242,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2009948939}
         m_TargetAssemblyTypeName: DisplayStats, Assembly-CSharp
         m_MethodName: UpdateStatsDisplay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 37398031}
+        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
+        m_MethodName: OnEquipmentChanged
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3891,9 +3937,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1520469177}
-        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
-        m_MethodName: OnEquipmentChanged
+      - m_Target: {fileID: 37398033}
+        m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
+        m_MethodName: UpdateBodyParts
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3903,9 +3949,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1520469178}
-        m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
-        m_MethodName: UpdateBodyParts
+      - m_Target: {fileID: 37398031}
+        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
+        m_MethodName: OnEquipmentChanged
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4108,7 +4154,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1520469181}
+      - m_Target: {fileID: 37398032}
         m_TargetAssemblyTypeName: Spriter2UnityDX.EntityRenderer, Assembly-CSharp
         m_MethodName: PlaySlashingAnimation
         m_Mode: 1
@@ -4237,39 +4283,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475406616}
   m_CullTransparentMesh: 1
---- !u!114 &1520469177 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1957684844292108897, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
-  m_PrefabInstance: {fileID: 628162516}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07cb71056bc9e1f45a4ac69991b67fb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
---- !u!114 &1520469178 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -4589033460241453723, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
-  m_PrefabInstance: {fileID: 628162516}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 528f6dc4487ecae4c9d804f9444e3ad4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BodyPartsManager
---- !u!114 &1520469181 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7768194057456546679, guid: 9e039a52e3b666c4ea1355eb36e9f980, type: 3}
-  m_PrefabInstance: {fileID: 628162516}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8e9dda14b6f34517a0d598d3320a902, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1543316957
 GameObject:
   m_ObjectHideFlags: 0
@@ -4761,6 +4774,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 37398031}
+        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
+        m_MethodName: OnEquipmentChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1696861862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5236,6 +5261,7 @@ MonoBehaviour:
   bodyPartSelections:
   - bodyPartName: Body
     bodyPartOptions:
+    - {fileID: 11400000, guid: c9f69698a6137384a85a6ad07e8759b8, type: 2}
     - {fileID: 11400000, guid: 04184ccc187ebeb4898134b291bec24b, type: 2}
     - {fileID: 11400000, guid: 48cdaf5d95f59d94a8fa889ff85dcc07, type: 2}
     - {fileID: 11400000, guid: 49420c3a7856d0e4180d96dfbe01708d, type: 2}
@@ -5243,6 +5269,7 @@ MonoBehaviour:
     bodyPartCurrentIndex: 0
   - bodyPartName: Hair
     bodyPartOptions:
+    - {fileID: 11400000, guid: 42b3345b46f94be4baaf6fdfd351322d, type: 2}
     - {fileID: 11400000, guid: 6cbe392ad638a864daa283f1419d4412, type: 2}
     - {fileID: 11400000, guid: 7a2a182ab3c50ce44a5e03b296084fb5, type: 2}
     - {fileID: 11400000, guid: a9e5e8aeb33ee794282c6fc34372e375, type: 2}
@@ -5250,6 +5277,7 @@ MonoBehaviour:
     bodyPartCurrentIndex: 0
   - bodyPartName: Torso
     bodyPartOptions:
+    - {fileID: 11400000, guid: 38be0e882151d7b4fb360dcc0fe6fa00, type: 2}
     - {fileID: 11400000, guid: 1344766a0a65f164aa04b98df2bc5bd3, type: 2}
     - {fileID: 11400000, guid: bc32bae8dd8f0ce41a514cf6fd504e3c, type: 2}
     - {fileID: 11400000, guid: 83117d11012fa8347828fcf60594485a, type: 2}
@@ -5257,6 +5285,7 @@ MonoBehaviour:
     bodyPartCurrentIndex: 0
   - bodyPartName: Legs
     bodyPartOptions:
+    - {fileID: 11400000, guid: 035d147b4d1cfe44f9bd42b17c259767, type: 2}
     - {fileID: 11400000, guid: 3446583dbcbcedb49ae7587f7ef2e7dc, type: 2}
     - {fileID: 11400000, guid: 664153d2da20a6b4fb38d1ab9adedfb1, type: 2}
     - {fileID: 11400000, guid: fede4583e1a6136499b369a5647bcc2f, type: 2}
@@ -5593,7 +5622,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1520469177}
+      - m_Target: {fileID: 37398031}
         m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
         m_MethodName: OnEquipmentChanged
         m_Mode: 1
@@ -5605,7 +5634,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1520469178}
+      - m_Target: {fileID: 37398033}
         m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
         m_MethodName: UpdateBodyParts
         m_Mode: 1
@@ -5919,7 +5948,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1520469177}
+      - m_Target: {fileID: 37398031}
         m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
         m_MethodName: OnEquipmentChanged
         m_Mode: 1
@@ -5931,7 +5960,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1520469178}
+      - m_Target: {fileID: 37398033}
         m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
         m_MethodName: UpdateBodyParts
         m_Mode: 1
@@ -6166,7 +6195,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1520469177}
+      - m_Target: {fileID: 37398031}
         m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
         m_MethodName: OnEquipmentChanged
         m_Mode: 1
@@ -6178,7 +6207,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1520469178}
+      - m_Target: {fileID: 37398033}
         m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
         m_MethodName: UpdateBodyParts
         m_Mode: 1
@@ -6349,7 +6378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65ebdbbdfe7083045b2c3adb09bf4493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DisplayStats
-  playerStats: {fileID: 1520469177}
+  playerStats: {fileID: 37398031}
   healthText: {fileID: 1598617988}
   attackText: {fileID: 1814609992}
   rerollingText: {fileID: 1414576370}
@@ -6699,7 +6728,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1520469177}
+      - m_Target: {fileID: 37398031}
         m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
         m_MethodName: OnEquipmentChanged
         m_Mode: 1
@@ -6711,7 +6740,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1520469178}
+      - m_Target: {fileID: 37398033}
         m_TargetAssemblyTypeName: BodyPartsManager, Assembly-CSharp
         m_MethodName: UpdateBodyParts
         m_Mode: 1
@@ -6956,7 +6985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edfaaf5e4e2364942b8fc6cef8fa3220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerTypeSelector
-  playerStats: {fileID: 1520469177}
+  playerStats: {fileID: 37398031}
   raceSelection:
     raceOptions:
     - {fileID: 11400000, guid: cf3f1136df1287f49b53623a1a2a5b89, type: 2}
@@ -7054,6 +7083,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 441531665}
-  - {fileID: 628162516}
+  - {fileID: 37398030}
   - {fileID: 1654656512}
   - {fileID: 758116794}

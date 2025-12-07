@@ -16,3 +16,4 @@ MonoBehaviour:
   raceName: Human
   synergyTag: 6
   description: I'm only human after all.
+  sprite: {fileID: 21300000, guid: be85a752bbb079e41aec945f66667f21, type: 3}

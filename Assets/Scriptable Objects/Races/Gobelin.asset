@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_Race
   race: 2
   raceName: Gobelin
-  associatedTag: 0
+  synergyTag: 0
   description: Je suis le lutin grognon, et je vis sous ce pont.
+  sprite: {fileID: 21300000, guid: a8d8cf956aa19574f91e2bf6a93ac4f7, type: 3}

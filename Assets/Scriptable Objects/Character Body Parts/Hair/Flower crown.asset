@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d56554f0f28e3174b9b0f26242568028, type: 3}
   m_Name: Flower crown
   m_EditorClassIdentifier: 
-  bodyPartName: Flower crown
-  bodyPartAnimationID: 0
+  bodyPartName: Flower Crown
+  bodyPartAnimationID: 1
   synergyTags: 0200000001000000
   stats:
     HP: 10
@@ -22,12 +22,5 @@ MonoBehaviour:
     DEF: 0
     CC: 0
     CD: 0
-  allBodyPartAnimations:
-  - {fileID: 7400000, guid: de2c7eacb04ddc94589585a6701088c8, type: 2}
-  - {fileID: 7400000, guid: 7ec2479e439c0a946acdd0ac1daeb17b, type: 2}
-  - {fileID: 7400000, guid: 958866ae929d0d3428af4b9f69340f9d, type: 2}
-  - {fileID: 7400000, guid: 0f9b9a26b92969545aa7c8d2c2b5aead, type: 2}
-  - {fileID: 7400000, guid: d69e850661dc0d34c8ee6df81ab4a6ad, type: 2}
-  - {fileID: 7400000, guid: 6092ac73708c7c047b7944ac8e234b37, type: 2}
-  - {fileID: 7400000, guid: 3799b30d7350b474fbdd0717d2f8818e, type: 2}
-  - {fileID: 7400000, guid: b4df4737918210f40b40c3ec13aeade2, type: 2}
+  bodyPartSprites:
+  - {fileID: 21300000, guid: dd5d4897f0a52b740a35337ac3dbe269, type: 3}

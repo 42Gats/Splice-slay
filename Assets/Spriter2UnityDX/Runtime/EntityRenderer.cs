@@ -75,15 +75,64 @@ namespace Spriter2UnityDX {
 			}
 		}
 		
+		[Header("Animations (Cached)")]
 		private const string IS_WALKING_PARAM = "IsWalking";
 		private const string IS_HURT_PARAM = "HurtTrigger";
 		private const string IS_IDLE_PARAM = "IsIdle";
 		private const string IS_DYING_PARAM = "DyingTrigger";
 		private const string IS_SLASHING_PARAM = "SlashTrigger";
+		[Header("Part Renderers (Cached)")]
+        [SerializeField] private SpriteRenderer headRenderer;
+        [SerializeField] private SpriteRenderer faceRenderer; 
+        [SerializeField] private SpriteRenderer rightHandRenderer;
+        [SerializeField] private SpriteRenderer leftHandRenderer;
+        [SerializeField] private SpriteRenderer rightArmRenderer;
+        [SerializeField] private SpriteRenderer leftArmRenderer;
+        [SerializeField] private SpriteRenderer rightLegRenderer;
+        [SerializeField] private SpriteRenderer leftLegRenderer;
+        [SerializeField] private SpriteRenderer bodyRenderer;
+        [SerializeField] private SpriteRenderer swordRenderer;
+        [SerializeField] private SpriteRenderer fxRenderer;
+        
+        private Animator animator;
 
 		private void Awake () {
-			RefreshRenders ();
+			RefreshRenders();
+			CachePartRenderers();
+			animator = GetComponent<Animator>();
 		}
+
+		private void CachePartRenderers()
+        {
+            Transform boneRoot = transform; 
+
+            Transform bone007 = boneRoot.Find("bone_006/bone_007");
+            if (bone007 != null)
+            {
+                headRenderer = bone007.Find("Head")?.GetComponent<SpriteRenderer>();
+                faceRenderer = bone007.Find("Face 01")?.GetComponent<SpriteRenderer>();
+            }
+
+            Transform bone001 = boneRoot.Find("bone_006/bone_000/bone_001");
+            if (bone001 != null)
+            {
+                rightHandRenderer = bone001.Find("Right Hand")?.GetComponent<SpriteRenderer>();
+            }
+            rightArmRenderer = boneRoot.Find("bone_006/bone_000/Right Arm")?.GetComponent<SpriteRenderer>();
+
+            Transform bone003 = boneRoot.Find("bone_006/bone_002/bone_003");
+            if (bone003 != null)
+            {
+                swordRenderer = bone003.Find("Sword")?.GetComponent<SpriteRenderer>();
+                leftHandRenderer = bone003.Find("Left Hand")?.GetComponent<SpriteRenderer>();
+            }
+            leftArmRenderer = boneRoot.Find("bone_006/bone_002/Left Arm")?.GetComponent<SpriteRenderer>();
+
+            rightLegRenderer = boneRoot.Find("bone_005/Right Leg")?.GetComponent<SpriteRenderer>();
+            leftLegRenderer = boneRoot.Find("bone_004/Left Leg")?.GetComponent<SpriteRenderer>();
+            bodyRenderer = boneRoot.Find("bone_006/Body")?.GetComponent<SpriteRenderer>();
+            fxRenderer = boneRoot.Find("SlashFX")?.GetComponent<SpriteRenderer>();
+        }
 
 		private void OnEnable () {
 			DoForAll (x => x.enabled = true);
@@ -98,7 +147,6 @@ namespace Spriter2UnityDX {
 		}
 		private void ChangeAnimation(string animationName)
 		{
-			Animator animator = GetComponent<Animator>();
 			if (animator != null)
 			{
 				StopAnimation();
@@ -121,19 +169,14 @@ namespace Spriter2UnityDX {
 		}
 		public void StopAnimation()
 		{
-			Animator animator = GetComponent<Animator>();
 			if (animator != null && animator.enabled)
 			{
-				animator.ResetTrigger(IS_DYING_PARAM);
-				animator.ResetTrigger(IS_HURT_PARAM);
-				animator.ResetTrigger(IS_SLASHING_PARAM);
 				animator.SetBool(IS_IDLE_PARAM, false);
 				animator.SetBool(IS_WALKING_PARAM, false);
 			}
 		}
 		public void StartAnimation()
 		{
-			Animator animator = GetComponent<Animator>();
 			if (animator != null)
 			{
 				animator.enabled = true;
@@ -159,6 +202,71 @@ namespace Spriter2UnityDX {
 		public void PlayIdleAnimation()
 		{
 			ChangeAnimation(IS_IDLE_PARAM);
+		}
+		public void ChangeRaceSprite(Sprite newSprite)
+		{
+			if (faceRenderer != null)
+			{
+				faceRenderer.sprite = newSprite;
+			}
+		}
+		public void ChangeHeadSprite(Sprite newSprite)
+		{
+			if (headRenderer != null)
+			{
+				headRenderer.sprite = newSprite;
+			}
+		}
+		public void ChangeBodySprite(Sprite newSprite)
+		{
+			if (bodyRenderer != null)
+			{
+				bodyRenderer.sprite = newSprite;
+			}
+		}
+
+		public void ChangeArmsItems(Sprite newRArmSprite, Sprite newLArmSprite, Sprite newRHandSprite, Sprite newLHandSprite, Sprite newSwordSprite, Sprite newFXSprite)
+		{
+			// 1. Bras (Gauche et Droit)
+			if (rightArmRenderer != null)
+			{
+				rightArmRenderer.sprite = newRArmSprite;
+			}
+			if (leftArmRenderer != null)
+			{
+				leftArmRenderer.sprite = newLArmSprite;
+			}
+
+			// 2. Mains (Gauche et Droite)
+			if (rightHandRenderer != null)
+			{
+				rightHandRenderer.sprite = newRHandSprite;
+			}
+			if (leftHandRenderer != null)
+			{
+				leftHandRenderer.sprite = newLHandSprite;
+			}
+
+			// 3. Épée
+			if (swordRenderer != null)
+			{
+				swordRenderer.sprite = newSwordSprite;
+			}
+			if (fxRenderer != null)
+			{
+				fxRenderer.sprite = newFXSprite;
+			}
+		}
+		public void ChangeLegsSprite(Sprite newLLeg ,Sprite newRLeg)
+		{
+			if (leftLegRenderer != null)
+			{
+				leftLegRenderer.sprite = newLLeg;
+			}
+			if (rightLegRenderer != null)
+			{
+				rightLegRenderer.sprite = newRLeg;
+			}
 		}
 	}
 }

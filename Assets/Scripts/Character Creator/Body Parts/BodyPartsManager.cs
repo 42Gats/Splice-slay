@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using Spriter2UnityDX;
 using UnityEngine;
 
 public class BodyPartsManager : MonoBehaviour
@@ -9,61 +11,124 @@ public class BodyPartsManager : MonoBehaviour
     [SerializeField] private string[] characterStates;
     [SerializeField] private string[] characterDirections;
     
-    private Animator animator;
-    private AnimationClip animationClip;
-    private AnimatorOverrideController animatorOverrideController;
-    private AnimationClipOverrides defaultAnimationClips;
+    private EntityRenderer entityRenderer;
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
-        animatorOverrideController = new AnimatorOverrideController(animator.runtimeAnimatorController);
-        animator.runtimeAnimatorController = animatorOverrideController;
-
-        defaultAnimationClips = new AnimationClipOverrides(animatorOverrideController.overridesCount);
-        animatorOverrideController.GetOverrides(defaultAnimationClips);
-
+        entityRenderer = GetComponent<EntityRenderer>();
         UpdateBodyParts();
+    }
+
+    private void UpdateBodyParts(Sprite sprite)
+    {
+        entityRenderer.ChangeBodySprite(sprite);
+    }
+
+    private void UpdateLegsParts(Sprite spriteL, Sprite spriteR)
+    {
+        entityRenderer.ChangeLegsSprite(spriteL, spriteR);
+    }
+
+    private void UpdateHeadParts(Sprite sprite)
+    {
+        entityRenderer.ChangeHeadSprite(sprite);
+    }
+
+    private void UpdateArmsParts(List<Sprite> armsPartSprites)
+    {
+        Sprite rightArmSprite = armsPartSprites.Count > 0 ? armsPartSprites[0] : null;
+        Sprite leftArmSprite = armsPartSprites.Count > 1 ? armsPartSprites[1] : null;
+        Sprite rightHandSprite = armsPartSprites.Count > 2 ? armsPartSprites[2] : null;
+        Sprite leftHandSprite = armsPartSprites.Count > 3 ? armsPartSprites[3] : null;
+        Sprite swordSprite = armsPartSprites.Count > 4 ? armsPartSprites[4] : null;
+        Sprite fxSprite = armsPartSprites.Count > 5 ? armsPartSprites[5] : null;
+
+        entityRenderer.ChangeArmsItems(
+            rightArmSprite,
+            leftArmSprite,
+            rightHandSprite,
+            leftHandSprite,
+            swordSprite,
+            fxSprite    
+        );
     }
 
     public void UpdateBodyParts()
     {
-        // Override default animation clips with new player body parts
-        for (int partIndex = 0; partIndex < bodyPartTypes.Length; partIndex++)
+        if (entityRenderer == null) return;
+
+        for (int partIndex = 0; partIndex < characterBody.characterBodyParts.Length; partIndex++)
         {
-            string partType = bodyPartTypes[partIndex];
-            string partID = characterBody.characterBodyParts[partIndex].bodyPart.bodyPartAnimationID.ToString();
+            SO_BodyPart equippedPart = characterBody.characterBodyParts[partIndex].bodyPart;
+            List<Sprite> sprites = equippedPart.bodyPartSprites;
 
-            for (int stateIndex = 0; stateIndex < characterStates.Length; stateIndex++)
+            string equipmentName = equippedPart.bodyPartName; 
+
+            if (sprites == null || sprites.Count == 0) continue;
+
+            switch (equipmentName)
             {
-                string state = characterStates[stateIndex];
-                for (int directionIndex = 0; directionIndex < characterDirections.Length; directionIndex++)
-                {
-                    string direction = characterDirections[directionIndex];
+                // BODY
+                case "Basic Body":
+                    UpdateBodyParts(sprites[0]);
+                    break;
+                case "Ceremonial Robe":
+                    UpdateBodyParts(sprites[0]);
+                    break;
+                case "Vine Shoulder Piece":
+                    UpdateBodyParts(sprites[0]);
+                    break;
+                case "Soul Bound Chestplate":
+                    UpdateBodyParts(sprites[0]);
+                    break;
 
-                    animationClip = Resources.Load<AnimationClip>("Animations/Player/" + partType + "/" + partType + "_" + partID + "_" + state + "_" + direction);
+                // ARMS
+                case "Basic Arms":
+                    UpdateArmsParts(sprites);
+                    break;
+                case "Midas Hand":
+                    UpdateArmsParts(sprites);
+                    break;
+                case "Claws":
+                    UpdateArmsParts(sprites);
+                    break;
+                case "Royal Ring":
+                    UpdateArmsParts(sprites);
+                    break;
 
-                    defaultAnimationClips[partType + "_" + 0 + "_" + state + "_" + direction] = animationClip;
-                }
+                // LEGS
+                case "Basic Legs":
+                    UpdateLegsParts(sprites[0], sprites[1]);
+                    break;
+                case "Golden Greaves":
+                    UpdateLegsParts(sprites[0], sprites[1]);
+                    break;
+                case "Devil Paws":
+                    UpdateLegsParts(sprites[0], sprites[1]);
+                    break;
+                case "Spiked Leggings":
+                    UpdateLegsParts(sprites[0], sprites[1]);
+                    break;
+
+                // HEAD
+                case "Basic Head":
+                    UpdateHeadParts(sprites[0]);
+                    break;
+                case "Flower Crown":
+                    UpdateHeadParts(sprites[0]);
+                    break;
+                case "Demon Horn":
+                    UpdateHeadParts(sprites[0]);
+                    break;
+                case "Gladiator Helmet":
+                    UpdateHeadParts(sprites[0]);
+                    break;
+
+                default:
+                    Debug.LogWarning($"Équipement '{equipmentName}' non reconnu pour l'application des sprites.");
+                    break;
             }
         }
 
-        animatorOverrideController.ApplyOverrides(defaultAnimationClips);
-    }
-
-    public class AnimationClipOverrides : List<KeyValuePair<AnimationClip, AnimationClip>>
-    {
-        public AnimationClipOverrides(int capacity) : base(capacity) { }
-
-        public AnimationClip this[string name]
-        {
-            get { return this.Find(x => x.Key.name.Equals(name)).Value; }
-            set
-            {
-                int index = this.FindIndex(x => x.Key.name.Equals(name));
-                if (index != -1)
-                    this[index] = new KeyValuePair<AnimationClip, AnimationClip>(this[index].Key, value);
-            }
-        }
     }
 }

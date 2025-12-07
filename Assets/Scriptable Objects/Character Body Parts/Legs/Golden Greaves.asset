@@ -22,12 +22,6 @@ MonoBehaviour:
     DEF: 0
     CC: 0
     CD: 0
-  allBodyPartAnimations:
-  - {fileID: 7400000, guid: 2101e21bcb897974e86d7e48886abd9a, type: 2}
-  - {fileID: 7400000, guid: 126ec44803c7c3748ab8578abed12a45, type: 2}
-  - {fileID: 7400000, guid: 39cf02284845a5943ba9672cd0a57982, type: 2}
-  - {fileID: 7400000, guid: 1c73863f44ec28d418301386abeeed8c, type: 2}
-  - {fileID: 7400000, guid: 4ba9f7f79e4434344af117bd33a57d53, type: 2}
-  - {fileID: 7400000, guid: 246bf6a609c94014c9618fbb4d9d9039, type: 2}
-  - {fileID: 7400000, guid: 172c8199ef9b8cf42b2a3bd677316915, type: 2}
-  - {fileID: 7400000, guid: a27ef26098a7fb046b396660767df357, type: 2}
+  bodyPartSprites:
+  - {fileID: 21300000, guid: b6534272c21a20d4b92dd69308da4961, type: 3}
+  - {fileID: 21300000, guid: d78aa573d38f3174b936ee0a84de5bbc, type: 3}

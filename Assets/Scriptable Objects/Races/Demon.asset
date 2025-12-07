@@ -16,3 +16,4 @@ MonoBehaviour:
   raceName: Demon
   synergyTag: 4
   description: "J'ai plus d'inspi mais c'est un m\xE9chant."
+  sprite: {fileID: 21300000, guid: e7a5c854bccc0b440bfab60b8155f420, type: 3}

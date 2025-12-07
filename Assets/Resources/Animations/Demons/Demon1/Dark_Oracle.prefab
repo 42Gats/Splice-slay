@@ -73,6 +73,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sortingOrder: 0
   applySpriterZOrder: 0
+  headRenderer: {fileID: 576891804668596727}
+  faceRenderer: {fileID: 8409036881643948432}
+  rightHandRenderer: {fileID: 3420192430473727220}
+  leftHandRenderer: {fileID: 7830000782462354686}
+  rightArmRenderer: {fileID: 3510354146829185082}
+  leftArmRenderer: {fileID: 2897382652159887751}
+  rightLegRenderer: {fileID: 443222722892623395}
+  leftLegRenderer: {fileID: 8598418104251113461}
+  bodyRenderer: {fileID: 6995935417323805622}
+  swordRenderer: {fileID: 6288076384754119503}
+  fxRenderer: {fileID: 2873794776242210175}
 --- !u!1 &1681193827180407392
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,7 +529,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3461221328990208298}
   - component: {fileID: 8409036881643948432}
-  - component: {fileID: 3982628413033612048}
+  - component: {fileID: 8962069163763899228}
   m_Layer: 0
   m_Name: Face 01
   m_TagString: Untagged
@@ -600,7 +611,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &3982628413033612048
+--- !u!114 &8962069163763899228
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

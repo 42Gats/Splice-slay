@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using Spriter2UnityDX;
+
 
 public abstract class Fighter : MonoBehaviour
 {
@@ -33,6 +35,8 @@ public abstract class Fighter : MonoBehaviour
         
         int remaining = finalDamage;
         float currentHP = stats.GetCurrentHP();
+
+        GetComponent<EntityRenderer>().PlayHurtAnimation();
         
         if (shield > 0)
         {
@@ -49,12 +53,10 @@ public abstract class Fighter : MonoBehaviour
             Debug.Log($"{fighterName} took {finalDamage} damage, reduced to {remaining} after shield. Current HP: {currentHP}");
         }
         
-        if (animator) animator.SetTrigger("Hit");
         
         if (currentHP <= 0)
         {
             stats.SetCurrentHP(0);
-            if (animator) animator.SetTrigger("Death");
             OnDeath?.Invoke();
         }
     }
@@ -95,6 +97,14 @@ public abstract class Fighter : MonoBehaviour
         currentHP = Mathf.Min(currentHP + amount, maxHP);
         stats.SetCurrentHP(currentHP);
     }
+
+    public bool isActionFinished()
+    {
+        if (animator == null) return true;
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsTag("Idle")) return true;
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        return stateInfo.normalizedTime >= 1f;
+    }
     
     public virtual void Attack(Fighter target, int overrideDamage = -1)
     {        
@@ -104,13 +114,16 @@ public abstract class Fighter : MonoBehaviour
         float critDamageMultiplier = stats.GetCD() / 100f;
         
         int dmg = (overrideDamage > -1 ? overrideDamage : Mathf.RoundToInt(attackDamage));
-        
+
+        Debug.Log("Changing animation to ATTACK");
+
+        GetComponent<EntityRenderer>().PlaySlashingAnimation();
+
         if (UnityEngine.Random.value < critChance)
         {
             dmg = Mathf.RoundToInt(dmg * critDamageMultiplier);
         }
         
-        if (animator) animator.SetTrigger("Attack");
         target.TakeDamage(dmg);
     }
     

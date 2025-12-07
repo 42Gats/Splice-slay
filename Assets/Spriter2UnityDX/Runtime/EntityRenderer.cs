@@ -147,8 +147,11 @@ namespace Spriter2UnityDX {
 		}
 		private void ChangeAnimation(string animationName)
 		{
+			Debug.Log($"Changing animation to uiiii {animationName}");
+
 			if (animator != null)
 			{
+				Debug.Log($"Changing animation to {animationName}");
 				StopAnimation();
 				if (animationName == IS_WALKING_PARAM || animationName == IS_IDLE_PARAM )
                 {
@@ -197,6 +200,7 @@ namespace Spriter2UnityDX {
         }
 		public void PlaySlashingAnimation()
 		{
+			Debug.Log($"Changing animation to --------------- {IS_SLASHING_PARAM}");
 			ChangeAnimation(IS_SLASHING_PARAM);
 		}
 		public void PlayIdleAnimation()

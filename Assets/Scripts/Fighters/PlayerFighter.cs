@@ -1,4 +1,6 @@
 using UnityEngine;
+using Spriter2UnityDX;
+
 
 public class PlayerFighter : Fighter
 {
@@ -16,6 +18,8 @@ public class PlayerFighter : Fighter
     
     public override void Attack(Fighter target, int overrideDamage = -1)
     {        
+        GetComponent<EntityRenderer>().PlaySlashingAnimation();
+
         float critChance = playerStats.GetCC() / 100f;
         
         // Gobelin avec synergy Golden : crit garanti tous les 5 attacks

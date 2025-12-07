@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Spriter2UnityDX;
+
 
 public class CombatManager : MonoBehaviour
 {
@@ -23,6 +25,10 @@ public class CombatManager : MonoBehaviour
         player = GameObject.Find("Player").GetComponent<Fighter>();
         GameObject.Find("PlayerHPBar").GetComponent<HealthBar>().target = player;
         GameObject.Find("PlayerHPBar").GetComponent<HealthBar>().Reset();
+
+        enemy = GameObject.Find("Enemy").GetComponent<Fighter>();
+        GameObject.Find("EnemyHPBar").GetComponent<HealthBar>().target = enemy;
+        GameObject.Find("EnemyHPBar").GetComponent<HealthBar>().Reset();
     }
 
     [ContextMenu("TEST PlayerTurn")]
@@ -47,14 +53,24 @@ public class CombatManager : MonoBehaviour
         ApplyDiceResults(results);
 
         // Brief pause before enemy turn
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
         diceRoller.SetDiceResultVisibility(false);
         diceRoller.SetDiceEnabled(false);
 
         if (enemy.stats.GetCurrentHP() <= 0)
         {
+            enemy.GetComponent<EntityRenderer>().PlayDyingAnimation();
             EndCombat(true);
             yield break;
+        }
+
+        while (!player.isActionFinished())
+        {
+            yield return null;
+        }
+        while (!enemy.isActionFinished())
+        {
+            yield return null;
         }
 
         state = CombatState.EnemyTurn;
@@ -71,12 +87,19 @@ public class CombatManager : MonoBehaviour
 
         if (player.stats.GetCurrentHP() <= 0)
         {
+            player.GetComponent<EntityRenderer>().PlayDyingAnimation();
             EndCombat(false);
             yield break;
         }
         
-        // Brief pause before returning to player turn
-        // yield return new WaitForSeconds(0.5f);
+        while (!player.isActionFinished())
+        {
+            yield return null;
+        }
+        while (!enemy.isActionFinished())
+        {
+            yield return null;
+        }
 
         state = CombatState.PlayerTurn;
     }
@@ -84,6 +107,7 @@ public class CombatManager : MonoBehaviour
     void EndCombat(bool playerWon)
     {
         Debug.Log("Combat termin�. Player won: " + playerWon);
+
     }
 
     void ApplyDiceResults(DiceFace[] results)

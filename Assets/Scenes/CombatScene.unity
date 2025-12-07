@@ -1532,6 +1532,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1175250091901709947, guid: 18b158dcbce88ae499f23b9394cf9746, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1828141048976513914, guid: 18b158dcbce88ae499f23b9394cf9746, type: 3}
       propertyPath: m_LocalPosition.x
       value: 295.6838
@@ -1580,10 +1584,29 @@ PrefabInstance:
       propertyPath: characterBody
       value: 
       objectReference: {fileID: 11400000, guid: cb99e8fdf04746f48b77a05d0b50524f, type: 2}
+    - target: {fileID: 4963917069221025927, guid: 18b158dcbce88ae499f23b9394cf9746, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5960735100018643118, guid: 18b158dcbce88ae499f23b9394cf9746, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805134313650989323, guid: 18b158dcbce88ae499f23b9394cf9746, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8702923419549129332, guid: 18b158dcbce88ae499f23b9394cf9746, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1175250091901709947, guid: 18b158dcbce88ae499f23b9394cf9746, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2112883235}
   m_SourcePrefab: {fileID: 100100000, guid: 18b158dcbce88ae499f23b9394cf9746, type: 3}
 --- !u!1 &1098580795
 GameObject:
@@ -1676,6 +1699,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1126194311 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2800922769274151393, guid: fc5a546383502a1478e488df4dcd05cf, type: 3}
+  m_PrefabInstance: {fileID: 4645597822764674273}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1150092289
 GameObject:
   m_ObjectHideFlags: 0
@@ -2241,7 +2269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CombatManager
   player: {fileID: 0}
-  enemy: {fileID: 1760644288}
+  enemy: {fileID: 0}
   state: 0
   diceRoller: {fileID: 591304565}
   diceResult: {fileID: 0}
@@ -2616,12 +2644,37 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 422972762942509534, guid: fc5a546383502a1478e488df4dcd05cf, type: 3}
   m_PrefabInstance: {fileID: 4645597822764674273}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1126194311}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5489da221204dd34ea1550028ca1d5ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFighter
+--- !u!114 &1760644293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126194311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8e9dda14b6f34517a0d598d3320a902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Spriter2UnityDX.EntityRenderer
+  sortingOrder: 0
+  applySpriterZOrder: 0
+  headRenderer: {fileID: 0}
+  faceRenderer: {fileID: 0}
+  rightHandRenderer: {fileID: 0}
+  leftHandRenderer: {fileID: 0}
+  rightArmRenderer: {fileID: 0}
+  leftArmRenderer: {fileID: 0}
+  rightLegRenderer: {fileID: 0}
+  leftLegRenderer: {fileID: 0}
+  bodyRenderer: {fileID: 0}
+  swordRenderer: {fileID: 0}
+  fxRenderer: {fileID: 0}
 --- !u!1 &1783923203
 GameObject:
   m_ObjectHideFlags: 0
@@ -2702,7 +2755,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6337778129647752787, guid: 18b158dcbce88ae499f23b9394cf9746, type: 3}
   m_PrefabInstance: {fileID: 1043861653}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2112883229}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d2e89b58653f2343b22149224c7631a, type: 3}
@@ -2773,6 +2826,36 @@ RectTransform:
   m_AnchoredPosition: {x: -50, y: -22}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2112883229 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1175250091901709947, guid: 18b158dcbce88ae499f23b9394cf9746, type: 3}
+  m_PrefabInstance: {fileID: 1043861653}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2112883235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112883229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8e9dda14b6f34517a0d598d3320a902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Spriter2UnityDX.EntityRenderer
+  sortingOrder: 0
+  applySpriterZOrder: 0
+  headRenderer: {fileID: 0}
+  faceRenderer: {fileID: 0}
+  rightHandRenderer: {fileID: 0}
+  leftHandRenderer: {fileID: 0}
+  rightArmRenderer: {fileID: 0}
+  leftArmRenderer: {fileID: 0}
+  rightLegRenderer: {fileID: 0}
+  leftLegRenderer: {fileID: 0}
+  bodyRenderer: {fileID: 0}
+  swordRenderer: {fileID: 0}
+  fxRenderer: {fileID: 0}
 --- !u!1 &2126451358
 GameObject:
   m_ObjectHideFlags: 0
@@ -2973,6 +3056,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2800922769274151393, guid: fc5a546383502a1478e488df4dcd05cf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3660487394703739704, guid: fc5a546383502a1478e488df4dcd05cf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3
@@ -3013,10 +3100,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7174490015984034194, guid: fc5a546383502a1478e488df4dcd05cf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2800922769274151393, guid: fc5a546383502a1478e488df4dcd05cf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1760644293}
   m_SourcePrefab: {fileID: 100100000, guid: fc5a546383502a1478e488df4dcd05cf, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

@@ -47,12 +47,9 @@ public class CombatManager : MonoBehaviour
         ApplyDiceResults(results);
 
         // Brief pause before enemy turn
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.0f);
         diceRoller.SetDiceResultVisibility(false);
-
         diceRoller.SetDiceEnabled(false);
-
-        // yield return new WaitForSeconds(0.7f);
 
         if (enemy.stats.GetCurrentHP() <= 0)
         {

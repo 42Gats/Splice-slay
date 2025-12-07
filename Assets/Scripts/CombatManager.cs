@@ -17,6 +17,10 @@ public class CombatManager : MonoBehaviour
     private bool quickStrikeUsedThisTurn = false;
 
     [SerializeField] private GameObject diceResult;
+    [SerializeField] private GameObject WinMenu;
+    [SerializeField] private GameObject LooseMenu;
+
+
 
 
     void Start()
@@ -29,6 +33,8 @@ public class CombatManager : MonoBehaviour
         enemy = GameObject.Find("Enemy").GetComponent<Fighter>();
         GameObject.Find("EnemyHPBar").GetComponent<HealthBar>().target = enemy;
         GameObject.Find("EnemyHPBar").GetComponent<HealthBar>().Reset();
+        WinMenu.SetActive(false);
+        LooseMenu.SetActive(false);
     }
 
     [ContextMenu("TEST PlayerTurn")]
@@ -107,6 +113,14 @@ public class CombatManager : MonoBehaviour
     void EndCombat(bool playerWon)
     {
         Debug.Log("Combat termin�. Player won: " + playerWon);
+
+        if (playerWon)
+        {
+            WinMenu.SetActive(true);
+        } else
+        {
+            LooseMenu.SetActive(true);
+        }
 
     }
 

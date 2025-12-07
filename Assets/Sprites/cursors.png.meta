@@ -1,0 +1,273 @@
+fileFormatVersion: 2
+guid: 4767c442236016d49a45add79a53ef2d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3855006945011464767
+    second: cursor-pointers-game-user-interface-cartoon-vector-illustration-set-various-mouse-arrows-made-from-wood-stone-ground-with-cracks-metal-cheese-with-holes-gold-with-gemstones_0
+  - first:
+      213: -7804325844177339277
+    second: cursor-pointers-game-user-interface-cartoon-vector-illustration-set-various-mouse-arrows-made-from-wood-stone-ground-with-cracks-metal-cheese-with-holes-gold-with-gemstones_1
+  - first:
+      213: -8769598955296813451
+    second: cursor-pointers-game-user-interface-cartoon-vector-illustration-set-various-mouse-arrows-made-from-wood-stone-ground-with-cracks-metal-cheese-with-holes-gold-with-gemstones_2
+  - first:
+      213: -7287678001147181046
+    second: cursor-pointers-game-user-interface-cartoon-vector-illustration-set-various-mouse-arrows-made-from-wood-stone-ground-with-cracks-metal-cheese-with-holes-gold-with-gemstones_3
+  - first:
+      213: 6420095721820279136
+    second: cursor-pointers-game-user-interface-cartoon-vector-illustration-set-various-mouse-arrows-made-from-wood-stone-ground-with-cracks-metal-cheese-with-holes-gold-with-gemstones_4
+  - first:
+      213: 2652469492561495411
+    second: cursor-pointers-game-user-interface-cartoon-vector-illustration-set-various-mouse-arrows-made-from-wood-stone-ground-with-cracks-metal-cheese-with-holes-gold-with-gemstones_5
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cursor-pointers-game-user-interface-cartoon-vector-illustration-set-various-mouse-arrows-made-from-wood-stone-ground-with-cracks-metal-cheese-with-holes-gold-with-gemstones_0
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 110
+        width: 191
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c58de3bb93408ac0800000000000000
+      internalID: -3855006945011464767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cursor-pointers-game-user-interface-cartoon-vector-illustration-set-various-mouse-arrows-made-from-wood-stone-ground-with-cracks-metal-cheese-with-holes-gold-with-gemstones_1
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 111
+        width: 191
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37cb86a6ef671b390800000000000000
+      internalID: -7804325844177339277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cursor-pointers-game-user-interface-cartoon-vector-illustration-set-various-mouse-arrows-made-from-wood-stone-ground-with-cracks-metal-cheese-with-holes-gold-with-gemstones_2
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 111
+        width: 197
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57e85e6a6302c4680800000000000000
+      internalID: -8769598955296813451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cursor-pointers-game-user-interface-cartoon-vector-illustration-set-various-mouse-arrows-made-from-wood-stone-ground-with-cracks-metal-cheese-with-holes-gold-with-gemstones_3
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 115
+        width: 206
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0881304877fcda90800000000000000
+      internalID: -7287678001147181046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cursor-pointers-game-user-interface-cartoon-vector-illustration-set-various-mouse-arrows-made-from-wood-stone-ground-with-cracks-metal-cheese-with-holes-gold-with-gemstones_4
+      rect:
+        serializedVersion: 2
+        x: 1382
+        y: 107
+        width: 211
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0615a1b3b03c81950800000000000000
+      internalID: 6420095721820279136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cursor-pointers-game-user-interface-cartoon-vector-illustration-set-various-mouse-arrows-made-from-wood-stone-ground-with-cracks-metal-cheese-with-holes-gold-with-gemstones_5
+      rect:
+        serializedVersion: 2
+        x: 1719
+        y: 114
+        width: 186
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37540b933f67fc420800000000000000
+      internalID: 2652469492561495411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      cursor-pointers-game-user-interface-cartoon-vector-illustration-set-various-mouse-arrows-made-from-wood-stone-ground-with-cracks-metal-cheese-with-holes-gold-with-gemstones_0: -3855006945011464767
+      cursor-pointers-game-user-interface-cartoon-vector-illustration-set-various-mouse-arrows-made-from-wood-stone-ground-with-cracks-metal-cheese-with-holes-gold-with-gemstones_1: -7804325844177339277
+      cursor-pointers-game-user-interface-cartoon-vector-illustration-set-various-mouse-arrows-made-from-wood-stone-ground-with-cracks-metal-cheese-with-holes-gold-with-gemstones_2: -8769598955296813451
+      cursor-pointers-game-user-interface-cartoon-vector-illustration-set-various-mouse-arrows-made-from-wood-stone-ground-with-cracks-metal-cheese-with-holes-gold-with-gemstones_3: -7287678001147181046
+      cursor-pointers-game-user-interface-cartoon-vector-illustration-set-various-mouse-arrows-made-from-wood-stone-ground-with-cracks-metal-cheese-with-holes-gold-with-gemstones_4: 6420095721820279136
+      cursor-pointers-game-user-interface-cartoon-vector-illustration-set-various-mouse-arrows-made-from-wood-stone-ground-with-cracks-metal-cheese-with-holes-gold-with-gemstones_5: 2652469492561495411
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

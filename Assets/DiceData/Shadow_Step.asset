@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccc66486393bdef45928bb03f88288d9, type: 3}
   m_Name: Shadow_Step
   m_EditorClassIdentifier: Assembly-CSharp::DiceFace
+  icon: {fileID: 3889789100717405326, guid: 66f4ae1abc682d94bacb3dcbdeab9d9b, type: 3}
   type: 8
   valueT1: 5
   valueT2: 10

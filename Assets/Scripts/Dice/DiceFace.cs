@@ -18,6 +18,7 @@ public enum DiceFaceType
 [CreateAssetMenu(fileName = "NewDiceFace", menuName = "Dice/Dice Face")]
 public class DiceFace : ScriptableObject
 {
+    public Sprite icon;
     public DiceFaceType type;
 
     [Header("Values for 1 / 2 / 3 matches")]

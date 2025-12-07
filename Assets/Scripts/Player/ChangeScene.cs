@@ -8,8 +8,11 @@ public class ChangeScene : MonoBehaviour
     
     public void SelectScene(string sceneName)
     {
-        player.GetComponent<Transform>().position = new Vector3(-8, -2, 0);
-        enemy.gameObject.SetActive(true);
+        if (sceneName == "CombatScene")
+        {
+            player.GetComponent<Transform>().position = new Vector3(-8, -2, 0);
+            enemy.gameObject.SetActive(true);
+        }
         SceneManager.LoadScene(sceneName);
     }
 }

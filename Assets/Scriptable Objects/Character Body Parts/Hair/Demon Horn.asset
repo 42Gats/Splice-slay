@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Demon Horn
   m_EditorClassIdentifier: 
   bodyPartName: Demon Horn
-  bodyPartAnimationID: 0
+  bodyPartAnimationID: 2
   synergyTags: 0300000004000000
   stats:
     HP: -10
@@ -22,12 +22,5 @@ MonoBehaviour:
     DEF: 2
     CC: 0
     CD: 0
-  allBodyPartAnimations:
-  - {fileID: 7400000, guid: 0c2ccb54fd2f0554b843168383d3ee27, type: 2}
-  - {fileID: 7400000, guid: 2aac1a43ef5dc2243bcd2769a133a191, type: 2}
-  - {fileID: 7400000, guid: 3297e9fe3fa112b48a872020f68edc3a, type: 2}
-  - {fileID: 7400000, guid: f5f711cfb8a579449b4d09ab98227d9b, type: 2}
-  - {fileID: 7400000, guid: 12d39e53f40d3ff4ba196804305f820c, type: 2}
-  - {fileID: 7400000, guid: e6a04c83211c8714d930265e03a85fb0, type: 2}
-  - {fileID: 7400000, guid: 5ddcb855ffd38e749ab73d90b02b405c, type: 2}
-  - {fileID: 7400000, guid: 7dd58fe85013a7742b80322a98974f0d, type: 2}
+  bodyPartSprites:
+  - {fileID: 21300000, guid: d34f0136112f1bb4a807b4087711b037, type: 3}

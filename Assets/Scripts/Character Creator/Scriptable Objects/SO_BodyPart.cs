@@ -9,5 +9,5 @@ public class SO_BodyPart : ScriptableObject
     public SynergyTag[] synergyTags = new SynergyTag[2];
     public Stats stats;
 
-    public List<AnimationClip> allBodyPartAnimations = new List<AnimationClip>();
+    public List<Sprite> bodyPartSprites = new List<Sprite>();
 }

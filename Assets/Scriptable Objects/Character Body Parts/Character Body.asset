@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterBodyParts:
   - bodyPartName: Body
-    bodyPart: {fileID: 11400000, guid: 04184ccc187ebeb4898134b291bec24b, type: 2}
+    bodyPart: {fileID: 11400000, guid: c9f69698a6137384a85a6ad07e8759b8, type: 2}
   - bodyPartName: Hair
-    bodyPart: {fileID: 11400000, guid: 6cbe392ad638a864daa283f1419d4412, type: 2}
+    bodyPart: {fileID: 11400000, guid: 42b3345b46f94be4baaf6fdfd351322d, type: 2}
   - bodyPartName: Torso
-    bodyPart: {fileID: 11400000, guid: 1344766a0a65f164aa04b98df2bc5bd3, type: 2}
+    bodyPart: {fileID: 11400000, guid: 38be0e882151d7b4fb360dcc0fe6fa00, type: 2}
   - bodyPartName: Legs
-    bodyPart: {fileID: 11400000, guid: 664153d2da20a6b4fb38d1ab9adedfb1, type: 2}
+    bodyPart: {fileID: 11400000, guid: 035d147b4d1cfe44f9bd42b17c259767, type: 2}

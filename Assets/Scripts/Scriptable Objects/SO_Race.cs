@@ -8,4 +8,5 @@ public class SO_Race : ScriptableObject
     public SynergyTag synergyTag;
     [TextArea(3, 6)]
     public string description;
+    public Sprite sprite;
 }

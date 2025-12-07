@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Devil Paws
   m_EditorClassIdentifier: 
   bodyPartName: Devil Paws
-  bodyPartAnimationID: 0
+  bodyPartAnimationID: 2
   synergyTags: 0400000002000000
   stats:
     HP: 0
@@ -22,12 +22,6 @@ MonoBehaviour:
     DEF: 0
     CC: 10
     CD: 0
-  allBodyPartAnimations:
-  - {fileID: 7400000, guid: e1d9d9659405c4b49a6573decb8fcfbb, type: 2}
-  - {fileID: 7400000, guid: 0b671657d0236e846b6b0ca473079f17, type: 2}
-  - {fileID: 7400000, guid: c6990df9c06e0c248b4a7781f56c2060, type: 2}
-  - {fileID: 7400000, guid: 1211a01177e6bfc4ebfba968df875b0f, type: 2}
-  - {fileID: 7400000, guid: eca13d1f79fe41e488a362ab0759ffd6, type: 2}
-  - {fileID: 7400000, guid: 930d3ddadf31a4747bae4b828469f98a, type: 2}
-  - {fileID: 7400000, guid: a83143dd325887a4c99760427bd35e31, type: 2}
-  - {fileID: 7400000, guid: 6b32cea5cd8edaa47a04131296c4f82a, type: 2}
+  bodyPartSprites:
+  - {fileID: 21300000, guid: ec0c53fe78cf5064ebdce6a352e1bfef, type: 3}
+  - {fileID: 21300000, guid: e7f4dfc8e6819bf4aa0bca15bcffc0d2, type: 3}

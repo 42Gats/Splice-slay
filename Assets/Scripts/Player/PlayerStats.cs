@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Spriter2UnityDX;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
@@ -60,10 +61,12 @@ public class PlayerStats : MonoBehaviour
         if (playerClass == null) return;
         
         currentClass = playerClass;
+        CalculateStats();
     }
 
     public void OnEquipmentChanged()
     {
+        GetComponent<BodyPartsManager>().UpdateBodyParts();
         CalculateStats();
     }
 
@@ -77,7 +80,6 @@ public class PlayerStats : MonoBehaviour
         {
             equipmentStats *= 1.3f;
         }
-
         finalStats += equipmentStats;
 
         ApplySynergies();
@@ -181,7 +183,7 @@ public class PlayerStats : MonoBehaviour
     private void ApplyRaceBonus()
     {
         if (currentRace == null) return;
-
+       GetComponent<EntityRenderer>().ChangeRaceSprite(currentRace.sprite);
         switch (currentRace.race)
         {
             case Race.DEMON:

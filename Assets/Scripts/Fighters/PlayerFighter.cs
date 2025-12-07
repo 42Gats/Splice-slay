@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerFighter : Fighter
 {
     [SerializeField] private PlayerStats playerStats;
+    [SerializeField] private Spriter2UnityDX.EntityRenderer playerAnimationRenderer;
     
     private int gobelinGoldenCountDice = 0;
     

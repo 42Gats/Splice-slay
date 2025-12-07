@@ -14,6 +14,9 @@ public class CombatManager : MonoBehaviour
 
     private bool quickStrikeUsedThisTurn = false;
 
+    [SerializeField] private GameObject diceResult;
+
+
     void Start()
     {
         state = CombatState.PlayerTurn;
@@ -33,15 +36,20 @@ public class CombatManager : MonoBehaviour
     {
         state = CombatState.Busy;
 
-        var results = diceRoller.RollDice();
+        DiceFace[] results = null;
+        yield return StartCoroutine(diceRoller.RollDiceWithAnimation(r => results = r));
 
         Debug.Log("Roll results:");
         foreach (var r in results)
             Debug.Log($" - {r.type}");
 
+
         ApplyDiceResults(results);
 
-        yield return new WaitForSeconds(0.7f);
+        // Brief pause before enemy turn
+        yield return new WaitForSeconds(1.0f);
+        diceRoller.SetDiceResultVisibility(false);
+        diceRoller.SetDiceEnabled(false);
 
         if (enemy.stats.GetCurrentHP() <= 0)
         {
@@ -55,7 +63,9 @@ public class CombatManager : MonoBehaviour
 
     IEnumerator EnemyAttackRoutine()
     {
-        yield return new WaitForSeconds(0.6f);
+        // Timer to simulate enemy thinking/animation
+        float enemyAnimationTime = 1.5f;
+        yield return new WaitForSeconds(enemyAnimationTime);
 
         enemy.Attack(player);
 
@@ -64,6 +74,9 @@ public class CombatManager : MonoBehaviour
             EndCombat(false);
             yield break;
         }
+        
+        // Brief pause before returning to player turn
+        // yield return new WaitForSeconds(0.5f);
 
         state = CombatState.PlayerTurn;
     }
@@ -211,13 +224,19 @@ public class CombatManager : MonoBehaviour
             Debug.Log("QuickStrike triggered an extra roll:");
             quickStrikeUsedThisTurn = true;
 
-            DiceFace[] extra = diceRoller.RollDice();
-            ApplyDiceResults(extra);
+            StartCoroutine(RollExtraDice());
         }
         else
         {
             Debug.Log("QuickStrike ignoré : déjà utilisé ce tour.");
         }
+    }
+
+    IEnumerator RollExtraDice()
+    {
+        DiceFace[] extra = null;
+        yield return StartCoroutine(diceRoller.RollDiceWithAnimation(r => extra = r));
+        ApplyDiceResults(extra);
     }
 
     void ApplyShadowStep(int tier)

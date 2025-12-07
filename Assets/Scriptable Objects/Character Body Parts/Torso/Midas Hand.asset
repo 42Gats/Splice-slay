@@ -13,21 +13,19 @@ MonoBehaviour:
   m_Name: Midas Hand
   m_EditorClassIdentifier: 
   bodyPartName: Midas Hand
-  bodyPartAnimationID: 0
+  bodyPartAnimationID: 1
   synergyTags: 0000000004000000
   stats:
     HP: 0
-    ATK: 0
+    ATK: 10
     SPD: 0
     DEF: 0
-    CC: 0
+    CC: 10
     CD: 0
-  allBodyPartAnimations:
-  - {fileID: 7400000, guid: 6ad56b1ec95443a40991fb65b28e3778, type: 2}
-  - {fileID: 7400000, guid: 9f1a04a5f7c60da4e88677b6c043856a, type: 2}
-  - {fileID: 7400000, guid: 1b796ad6be0f9bb43878fc5cdf4cdd56, type: 2}
-  - {fileID: 7400000, guid: 6d15ce7c5db417e46b9a2ec45e042b4a, type: 2}
-  - {fileID: 7400000, guid: aaabdef41cb68244dbed5ef234367659, type: 2}
-  - {fileID: 7400000, guid: 477a33b50bc9ff140959cda80156ae5b, type: 2}
-  - {fileID: 7400000, guid: 30172d5d28d2c4a46ae1c2530a473507, type: 2}
-  - {fileID: 7400000, guid: f393e413389a67b44aaff830cd44c890, type: 2}
+  bodyPartSprites:
+  - {fileID: 21300000, guid: b21095c33b9577248b4f38dd765fa507, type: 3}
+  - {fileID: 21300000, guid: 2b21086fc8abfe147bd2a2542be8dff0, type: 3}
+  - {fileID: 21300000, guid: e5f951a743f2a754ba4bb3e50064b593, type: 3}
+  - {fileID: 21300000, guid: eca6f8fdb2871394594ef69c27e46c60, type: 3}
+  - {fileID: 21300000, guid: 26b48f6baa6ba9645b8f9511e29559af, type: 3}
+  - {fileID: 21300000, guid: 23e75a16e3bf1cd40a3fa2b58c60a0ae, type: 3}

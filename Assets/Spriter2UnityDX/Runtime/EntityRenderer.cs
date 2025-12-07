@@ -74,6 +74,12 @@ namespace Spriter2UnityDX {
 				}
 			}
 		}
+		
+		private const string IS_WALKING_PARAM = "IsWalking";
+		private const string IS_HURT_PARAM = "HurtTrigger";
+		private const string IS_IDLE_PARAM = "IsIdle";
+		private const string IS_DYING_PARAM = "DyingTrigger";
+		private const string IS_SLASHING_PARAM = "SlashTrigger";
 
 		private void Awake () {
 			RefreshRenders ();
@@ -90,6 +96,21 @@ namespace Spriter2UnityDX {
 		private void DoForAll (Action<SpriteRenderer> action) {
 			for (var i = 0; i < renderers.Length; i++) action (renderers [i]);
 		}
+		private void ChangeAnimation(string animationName)
+		{
+			Animator animator = GetComponent<Animator>();
+			if (animator != null)
+			{
+				StopAnimation();
+				if (animationName == IS_WALKING_PARAM || animationName == IS_IDLE_PARAM )
+                {
+					animator.SetBool(animationName, true);
+                } else
+                {
+                    animator.SetTrigger(animationName);
+                }
+			}
+		}
 
 		public void RefreshRenders () {
 			renderers = GetComponentsInChildren<SpriteRenderer> (true);
@@ -97,6 +118,47 @@ namespace Spriter2UnityDX {
 			var length = updaters.Length;
 			for (var i = 0; i < length; i++) updaters [i].SpriteCount = length;
 			_first = null;
+		}
+		public void StopAnimation()
+		{
+			Animator animator = GetComponent<Animator>();
+			if (animator != null && animator.enabled)
+			{
+				animator.ResetTrigger(IS_DYING_PARAM);
+				animator.ResetTrigger(IS_HURT_PARAM);
+				animator.ResetTrigger(IS_SLASHING_PARAM);
+				animator.SetBool(IS_IDLE_PARAM, false);
+				animator.SetBool(IS_WALKING_PARAM, false);
+			}
+		}
+		public void StartAnimation()
+		{
+			Animator animator = GetComponent<Animator>();
+			if (animator != null)
+			{
+				animator.enabled = true;
+				animator.SetBool(IS_IDLE_PARAM, true);
+			}
+		}
+		public void PlayWalkingAnimation()
+        {
+			ChangeAnimation(IS_WALKING_PARAM);
+        }
+		public void PlayHurtAnimation()
+        {
+            ChangeAnimation(IS_HURT_PARAM);
+        }
+		public void PlayDyingAnimation()
+        {
+            ChangeAnimation(IS_DYING_PARAM);
+        }
+		public void PlaySlashingAnimation()
+		{
+			ChangeAnimation(IS_SLASHING_PARAM);
+		}
+		public void PlayIdleAnimation()
+		{
+			ChangeAnimation(IS_IDLE_PARAM);
 		}
 	}
 }
